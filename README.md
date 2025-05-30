@@ -1,7 +1,7 @@
 
-# 🚀 HyperDash
+# ⚛️ HyperDash
 
-**HyperDash** adalah dashboard admin modern berbasis React.js + Vite, dirancang dengan antarmuka responsif dan modular. Cocok untuk digunakan sebagai base project admin panel.
+**HyperDash** adalah dashboard admin berbasis React.js + Tailwind CSS, dirancang dengan antarmuka responsif dan modular. Cocok untuk digunakan sebagai base project admin panel.
 
 ---
 
