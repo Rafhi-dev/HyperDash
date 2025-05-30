@@ -18,8 +18,7 @@ const LoginForm = () => {
     // Simulasi login 
     if (email === 'user@example.com' && password === 'password123') {
       alert('Login Berhasil!');
-      window.location.replace('/home')
-      // Di sini Anda bisa mengarahkan user ke halaman dashboard, menyimpan token, dll.
+      window.location.replace('/')
     } else {
       setError('Email atau password salah.');
     }

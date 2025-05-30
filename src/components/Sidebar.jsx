@@ -11,6 +11,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 function Sidebar({ isCollapsed }) {
+  // Buat daftar item menu sidebar
+  // dengan ikon, label, lokasi (loc), dan sub-items jika ada
   const menuItems = [
     { icon: faGauge, label: "Dashboard", loc: "/home" },
     { icon: faUser, label: "Profile", loc: "/" },
@@ -27,6 +29,8 @@ function Sidebar({ isCollapsed }) {
     },
     { icon: faCalendar, label: "Calendar" /* loc bisa ditambahkan jika ada */ },
   ];
+
+  // Render sidebar dengan daftar item menu
 
   return (
     <aside
