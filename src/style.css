@@ -1,0 +1,25 @@
+.sidebar-collapsed .sidebar-text,
+.sidebar-collapsed #sidebar-title {
+  display: none;
+  transition: display 0.3s ease;
+}
+.sidebar-collapsed .menu-item {
+  justify-content: center;
+  padding-left: 0;
+  padding-right: 0;
+}
+/* Smooth transitions */
+#sidebar {
+  transition: all 0.3s ease;
+}
+main {
+  transition: margin-left 0.3s ease;
+}
+
+button:focus,
+a:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+@import "tailwindcss";
