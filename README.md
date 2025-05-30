@@ -1,12 +1,79 @@
-# React + Vite
+Berikut adalah contoh file `README.md` yang dapat kamu gunakan untuk repositori [HyperDash](https://github.com/Rafhi-dev/HyperDash):
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+```markdown
+# HyperDash
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**HyperDash** adalah dashboard admin gratis berbasis React.js yang dibangun menggunakan Vite. Proyek ini dirancang untuk memberikan antarmuka pengguna yang modern dan responsif, cocok untuk digunakan dalam berbagai aplikasi web.
 
-## Expanding the ESLint configuration
+## 🚀 Fitur
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- ⚛️ Dibangun dengan React.js
+- ⚡️ Menggunakan Vite untuk pengembangan dan build yang cepat
+- 🎨 Desain UI modern dan responsif
+- 🧩 Struktur proyek modular untuk kemudahan pengembangan
+- 📦 Manajemen dependensi dengan npm
+
+## 📂 Struktur Proyek
+
+```
+
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── pages/
+│   ├── App.jsx
+│   └── main.jsx
+├── .gitignore
+├── index.html
+├── package.json
+├── package-lock.json
+├── vite.config.js
+└── README.md
+
+````
+
+## 🛠️ Instalasi dan Penggunaan
+
+### 1. Clone repositori
+
+```bash
+git clone https://github.com/Rafhi-dev/HyperDash.git
+cd HyperDash
+````
+
+### 2. Install dependensi
+
+```bash
+npm install
+```
+
+### 3. Jalankan aplikasi dalam mode pengembangan
+
+```bash
+npm run dev
+```
+
+Aplikasi akan berjalan di `http://localhost:5173` secara default.
+
+### 4. Build untuk produksi
+
+```bash
+npm run build
+```
+
+Hasil build akan tersedia di folder `dist/`, siap untuk di-deploy ke hosting.
+
+## 📄 Lisensi
+
+Proyek ini dilisensikan di bawah [MIT License](LICENSE).
+
+## 🙌 Kontribusi
+
+Kontribusi sangat terbuka! Silakan fork repositori ini dan buat pull request untuk perbaikan atau penambahan fitur.
+
+---
+
+```
