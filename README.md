@@ -60,11 +60,8 @@ src/
 Pull request sangat dipersilakan!
 Buat fitur baru, perbaikan bug, atau perbaikan UI 
 
----
 
 ## Lisensi
 
 MIT License – bebas digunakan dan dimodifikasi.
-
-```
 
