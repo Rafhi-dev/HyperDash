@@ -16,7 +16,7 @@ function Sidebar({ isCollapsed }) {
   const menuItems = [
     { icon: faGauge, label: "Dashboard", loc: "/home" },
     { icon: faUser, label: "Profile", loc: "/" },
-    { icon: faCog, label: "Settings" },
+    { icon: faCog, label: "Settings", loc: "/settings" },
     {
       icon: faEnvelope,
       label: "Messages",
@@ -27,7 +27,7 @@ function Sidebar({ isCollapsed }) {
         { icon: faPaperPlane, label: "Sent", loc: "/messages/sent" },
       ]
     },
-    { icon: faCalendar, label: "Calendar"},
+    { icon: faCalendar, label: "Calendar", loc: "/calendar" },
   ];
 
 
