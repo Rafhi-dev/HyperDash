@@ -13,19 +13,18 @@ function MainLayout({
         setIsSidebarCollapsed={setIsSidebarCollapsed}
       />
       <div className="flex pt-16">
-        {" "}
         <Sidebar isCollapsed={isSidebarCollapsed} />
-        
         <main
           className={`flex-1 p-6 mt-0 transition-all duration-300 ${
             isSidebarCollapsed ? "md:ml-20" : "md:ml-60"
           }`}
+          role="main"
         >
-          <Outlet /> {/* Komponen dari child route akan dirender di sini */}
+          <Outlet />
         </main>
       </div>
     </div>
   );
 }
 
-export default MainLayout
+export default MainLayout;
