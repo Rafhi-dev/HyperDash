@@ -12,6 +12,16 @@
 #sidebar {
   transition: all 0.3s ease;
 }
+.icon-hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.icon-visible {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
 main {
   transition: margin-left 0.3s ease;
 }

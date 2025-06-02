@@ -10,7 +10,7 @@ import {
   faPaperPlane 
 } from '@fortawesome/free-solid-svg-icons';
 
-function Sidebar({ isCollapsed }) {
+function Sidebar({ isCollapsed, isMobile }) {
   // Buat daftar item menu sidebar
   // dengan ikon, label, lokasi (loc), dan sub-items jika ada
   const menuItems = [
@@ -30,13 +30,16 @@ function Sidebar({ isCollapsed }) {
     { icon: faCalendar, label: "Calendar", loc: "/calendar" },
   ];
 
-
   return (
     <aside
       id="sidebar"
       aria-label="Sidebar Navigation"
-      className={`bg-white shadow-md h-[calc(100vh-4rem)] p-4 fixed top-16 left-0 z-10 overflow-y-auto transition-all duration-300
-        ${isCollapsed ? 'w-20 sidebar-collapsed' : 'w-60'}`}
+      className={`bg-white shadow-md h-full p-4 fixed top-16 left-0 z-10 overflow-y-auto transition-all duration-300
+  ${
+    isMobile
+      ? (isCollapsed ? 'w-0 icon-hidden' : 'w-full icon-visible')
+      : (isCollapsed ? 'w-20 sidebar-collapsed' : 'w-60')
+  }`}
     >
       <div className="mb-4 px-2">
         <h2 id="sidebar-title" className={`text-lg font-semibold text-gray-500 uppercase tracking-wider ${isCollapsed ? 'text-center text-xs' : ''}`}>
