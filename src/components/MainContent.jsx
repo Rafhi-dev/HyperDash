@@ -8,7 +8,7 @@ function MainContent() {
       <p className="mt-2 text-gray-600">
         Welcome to HyperDash (React free Admin Dashboard Template).
       </p>
-      <p className="mt-2 text-gray-600">v0.1.0-Dev</p>
+      <p className="mt-2 text-gray-600">v0.2.0-Dev</p>
     </div>
   );
 }
