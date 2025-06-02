@@ -1,5 +1,4 @@
-// Prop isSidebarCollapsed tidak lagi dibutuhkan di sini
-function MainContent() {
+const MainContent = () => {
   return (
     <div className="bg-white rounded-lg shadow-sm p-6">
       <h1 className="text-2xl md:text-3xl font-bold text-gray-800">
