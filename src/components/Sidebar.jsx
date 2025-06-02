@@ -35,6 +35,7 @@ function Sidebar({ isCollapsed }) {
   return (
     <aside
       id="sidebar"
+      aria-label="Sidebar Navigation"
       className={`bg-white shadow-md h-[calc(100vh-4rem)] p-4 fixed top-16 left-0 z-10 overflow-y-auto transition-all duration-300
         ${isCollapsed ? 'w-20 sidebar-collapsed' : 'w-60'}`}
     >
@@ -64,4 +65,4 @@ function Sidebar({ isCollapsed }) {
   );
 }
 
-export default Sidebar
+export default Sidebar;

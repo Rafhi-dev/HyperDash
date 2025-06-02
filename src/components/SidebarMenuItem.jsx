@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronRight } from '@fortawesome/free-solid-svg-icons'; // Untuk ikon dropdown
+import { Link } from 'react-router-dom'; // Tambahkan import Link
 
 function SidebarMenuItem({ icon, label, badge, loc, subItems }) {
   const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
@@ -10,38 +11,58 @@ function SidebarMenuItem({ icon, label, badge, loc, subItems }) {
       e.preventDefault(); // Mencegah navigasi jika ini adalah item dengan submenu
       setIsSubmenuOpen(!isSubmenuOpen);
     }
-    // Jika tidak ada subItems, navigasi standar melalui href akan terjadi
+    // Jika tidak ada subItems, navigasi standar melalui Link akan terjadi
   };
 
   return (
-    <li> {/* Mengubah <a> menjadi <li> untuk struktur yang lebih baik dengan submenu <ul> */}
-      <a
-        href={loc || '#'}
-        onClick={handleItemClick}
-        className={`menu-item flex items-center p-2 text-gray-600 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors cursor-pointer`}
-      >
-        <FontAwesomeIcon icon={icon} className="w-6 text-center" />
-        <span className="sidebar-text ml-3 flex-grow">{label}</span> {/* Tambahkan flex-grow agar badge dan ikon dropdown ke kanan */}
-        {badge && (
-          <span className="ml-auto bg-blue-100 text-blue-800 text-xs font-medium px-2 py-0.5 rounded-full mr-2"> 
-            {badge}
-          </span>
-        )}
-        {subItems && subItems.length > 0 && (
-          <FontAwesomeIcon
-            icon={isSubmenuOpen ? faChevronDown : faChevronRight}
-            className="w-4 h-4 transition-transform duration-300"
-          />
-        )}
-      </a>
+    <li>
+      {loc && (!subItems || subItems.length === 0) ? (
+        <Link
+          to={loc}
+          className={`menu-item flex items-center p-2 text-gray-600 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors cursor-pointer`}
+          role="menuitem"
+        >
+          <FontAwesomeIcon icon={icon} className="w-6 text-center" />
+          <span className="sidebar-text ml-3 flex-grow">{label}</span>
+          {badge && (
+            <span className="ml-auto bg-blue-100 text-blue-800 text-xs font-medium px-2 py-0.5 rounded-full mr-2">
+              {badge}
+            </span>
+          )}
+        </Link>
+      ) : (
+        <a
+          href="#"
+          onClick={handleItemClick}
+          className={`menu-item flex items-center p-2 text-gray-600 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors cursor-pointer`}
+          role="menuitem"
+          aria-haspopup={subItems && subItems.length > 0 ? "true" : undefined}
+          aria-expanded={subItems && subItems.length > 0 ? isSubmenuOpen : undefined}
+        >
+          <FontAwesomeIcon icon={icon} className="w-6 text-center" />
+          <span className="sidebar-text ml-3 flex-grow">{label}</span>
+          {badge && (
+            <span className="ml-auto bg-blue-100 text-blue-800 text-xs font-medium px-2 py-0.5 rounded-full mr-2">
+              {badge}
+            </span>
+          )}
+          {subItems && subItems.length > 0 && (
+            <FontAwesomeIcon
+              icon={isSubmenuOpen ? faChevronDown : faChevronRight}
+              className="w-4 h-4 transition-transform duration-300"
+            />
+          )}
+        </a>
+      )}
       {subItems && subItems.length > 0 && isSubmenuOpen && (
-        <ul className="pl-6 mt-1 space-y-1"> {/* Styling untuk submenu */}
+        <ul className="pl-6 mt-1 space-y-1" role="menu">
           {subItems.map((subItem, index) => (
-            <SidebarMenuItem // Rekursif menggunakan SidebarMenuItem untuk sub-item
-              key={index}
+            <SidebarMenuItem
+              key={subItem.loc || subItem.label || index}
               icon={subItem.icon}
               label={subItem.label}
               loc={subItem.loc}
+              badge={subItem.badge}
             />
           ))}
         </ul>
@@ -50,4 +71,4 @@ function SidebarMenuItem({ icon, label, badge, loc, subItems }) {
   );
 }
 
-export default SidebarMenuItem
+export default SidebarMenuItem;

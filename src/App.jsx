@@ -5,6 +5,7 @@ import MainContent from "./components/MainContent";
 
 import MainLayout from "./layouts/MainLayout";
 import LoginForm from "./components/LoginForm";
+import NotFound from "./components/404";
 
 function App() {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
@@ -23,6 +24,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/*" element={<NotFound />} />
         <Route path="/login" element={<LoginForm />} />
         <Route
           element={
