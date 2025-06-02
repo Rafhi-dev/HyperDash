@@ -6,8 +6,8 @@ import {
   faEnvelope,
   faCalendar,
   faQuestionCircle,
-  faInbox, // Ikon untuk All Inbox
-  faPaperPlane // Ikon untuk Sent
+  faInbox, 
+  faPaperPlane 
 } from '@fortawesome/free-solid-svg-icons';
 
 function Sidebar({ isCollapsed }) {
@@ -16,7 +16,7 @@ function Sidebar({ isCollapsed }) {
   const menuItems = [
     { icon: faGauge, label: "Dashboard", loc: "/home" },
     { icon: faUser, label: "Profile", loc: "/" },
-    { icon: faCog, label: "Settings" /* loc bisa ditambahkan jika ada */ },
+    { icon: faCog, label: "Settings" },
     {
       icon: faEnvelope,
       label: "Messages",
@@ -27,10 +27,9 @@ function Sidebar({ isCollapsed }) {
         { icon: faPaperPlane, label: "Sent", loc: "/messages/sent" },
       ]
     },
-    { icon: faCalendar, label: "Calendar" /* loc bisa ditambahkan jika ada */ },
+    { icon: faCalendar, label: "Calendar"},
   ];
 
-  // Render sidebar dengan daftar item menu
 
   return (
     <aside
