@@ -59,7 +59,6 @@ function Sidebar({ isCollapsed }) {
 
       <div className={`absolute bottom-0 left-0 right-0 p-4 border-t border-gray-100 ${isCollapsed ? 'flex justify-center' : ''}`}>
         <ul><SidebarMenuItem icon={faQuestionCircle} label="Help & Support" /></ul>
-        {/* Pastikan SidebarMenuItem bisa menangani isFooter jika diperlukan atau sesuaikan */}
       </div>
     </aside>
   );

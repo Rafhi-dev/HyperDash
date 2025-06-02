@@ -14,7 +14,6 @@ function MainLayout({
       />
       <div className="flex pt-16">
         {" "}
-        {/* pt-16 untuk memberi ruang */}
         <Sidebar isCollapsed={isSidebarCollapsed} />
         
         <main
