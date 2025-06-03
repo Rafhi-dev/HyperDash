@@ -3,18 +3,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronDown,
   faChevronRight,
-} from "@fortawesome/free-solid-svg-icons"; // Untuk ikon dropdown
-import { Link } from "react-router-dom"; // Tambahkan import Link
+} from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 function SidebarMenuItem({ icon, label, badge, loc, subItems }) {
   const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
 
   const handleItemClick = (e) => {
     if (subItems && subItems.length > 0) {
-      e.preventDefault(); // Mencegah navigasi jika ini adalah item dengan submenu
+      e.preventDefault(); 
       setIsSubmenuOpen(!isSubmenuOpen);
     }
-    // Jika tidak ada subItems, navigasi standar melalui Link akan terjadi
+    
   };
 
   return (
@@ -23,7 +23,7 @@ function SidebarMenuItem({ icon, label, badge, loc, subItems }) {
         <Link
           to={loc}
           className={`menu-item flex items-center p-2 text-gray-600 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors cursor-pointer`}
-          role="menuitem"
+          
         >
           <FontAwesomeIcon icon={icon} className="w-6 text-center" />
           <span className="sidebar-text ml-3 flex-grow">{label}</span>
@@ -38,7 +38,7 @@ function SidebarMenuItem({ icon, label, badge, loc, subItems }) {
           href="#"
           onClick={handleItemClick}
           className={`menu-item flex items-center p-2 text-gray-600 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors cursor-pointer`}
-          role="menuitem"
+          
           aria-haspopup={subItems && subItems.length > 0 ? "true" : undefined}
           aria-expanded={
             subItems && subItems.length > 0 ? isSubmenuOpen : undefined
@@ -60,7 +60,7 @@ function SidebarMenuItem({ icon, label, badge, loc, subItems }) {
         </a>
       )}
       {subItems && subItems.length > 0 && isSubmenuOpen && (
-        <ul className="pl-6 mt-1 space-y-1" role="menu">
+        <ul className="pl-6 mt-1 space-y-1">
           {subItems.map((subItem, index) => (
             <SidebarMenuItem
               key={subItem.loc || subItem.label || index}

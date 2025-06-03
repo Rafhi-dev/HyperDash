@@ -22,7 +22,7 @@ function MainLayout({
           className={`flex-1 p-6 mt-0 transition-all duration-300 ${
             isSidebarCollapsed ? "md:ml-20" : "md:ml-60"
           }`}
-          role="main"
+          
         >
           <Outlet />
         </main>

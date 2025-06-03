@@ -20,7 +20,7 @@ function Sidebar({ isCollapsed, isMobile }) {
     {
       icon: faEnvelope,
       label: "Messages",
-      badge: "5",
+      //badge: "5",
       // loc untuk parent Messages bisa dihilangkan jika hanya berfungsi sebagai toggle
       subItems: [
         { icon: faInbox, label: "All Inbox", loc: "/messages/inbox" },
@@ -60,7 +60,7 @@ function Sidebar({ isCollapsed, isMobile }) {
         ))}
       </ul>
 
-      <div className={`absolute bottom-0 left-0 right-0 p-4 border-t border-gray-100 ${isCollapsed ? 'flex justify-center' : ''}`}>
+      <div className={`fixed p-4 bottom-0 left-0 right-0 border-t border-gray-100 ${isCollapsed ? 'flex justify-center' : ''}`}>
         <ul><SidebarMenuItem icon={faQuestionCircle} label="Help & Support" /></ul>
       </div>
     </aside>
