@@ -34,10 +34,10 @@ function Sidebar({ isCollapsed, isMobile }) {
     <aside
       id="sidebar"
       aria-label="Sidebar Navigation"
-      className={`bg-white shadow-md h-full p-4 fixed top-16 left-0 z-10 overflow-y-auto transition-all duration-300
+      className={`bg-white shadow-md h-full p-4 fixed top-16 left-0 z-10 overflow-y-auto transition-all duration-500
   ${
     isMobile
-      ? (isCollapsed ? 'w-0 icon-hidden' : 'w-full icon-visible')
+      ? (isCollapsed ? 'w-1 sidebar-hidden' : 'w-full sidebar-visible')
       : (isCollapsed ? 'w-20 sidebar-collapsed' : 'w-60')
   }`}
     >
@@ -60,8 +60,9 @@ function Sidebar({ isCollapsed, isMobile }) {
         ))}
       </ul>
 
-      <div className={`fixed p-4 bottom-0 left-0 right-0 border-t border-gray-100 ${isCollapsed ? 'flex justify-center' : ''}`}>
-        <ul><SidebarMenuItem icon={faQuestionCircle} label="Help & Support" /></ul>
+
+      <div className={`fixed p-4 bottom-0 left-0 right-0 border-t border-gray-100 ${isCollapsed ? 'flex sidebar-collapsed ml-3' : ''}`}>
+        <ul className='space-y-1'><SidebarMenuItem icon={faQuestionCircle} label="Help & Support" /></ul>
       </div>
     </aside>
   );

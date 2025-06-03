@@ -54,7 +54,7 @@ function SidebarMenuItem({ icon, label, badge, loc, subItems }) {
           {subItems && subItems.length > 0 && (
             <FontAwesomeIcon
               icon={isSubmenuOpen ? faChevronDown : faChevronRight}
-              className="w-4 h-4 transition-transform duration-300"
+              className="w-4 h-4 transition-transform duration-500"
             />
           )}
         </a>

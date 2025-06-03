@@ -1,7 +1,7 @@
 .sidebar-collapsed .sidebar-text,
 .sidebar-collapsed #sidebar-title {
   display: none;
-  transition: display 0.3s ease;
+  transition: display 0.5s ease;
 }
 .sidebar-collapsed .menu-item {
   justify-content: center;
@@ -10,20 +10,20 @@
 }
 /* Smooth transitions */
 #sidebar {
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
 }
-.icon-hidden {
+.sidebar-hidden {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
-.icon-visible {
+.sidebar-visible {
   opacity: 1;
   visibility: visible;
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 main {
-  transition: margin-left 0.3s ease;
+  transition: margin-left 0.5s ease;
 }
 
 button:focus,
