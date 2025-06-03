@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import MainContent from "./components/MainContent";
+import MainContent from "./components/layout/contents/MainContent";
 
-import MainLayout from "./layouts/MainLayout";
-import LoginForm from "./components/LoginForm";
-import NotFound from "./components/404";
+import MainLayout from "./components/layout/MainLayout";
+import LoginForm from "./pages/LoginForm";
+import NotFound from "./pages/404";
 
 function App() {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);

@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom"; // Untuk merender child routes
-import Navbar from "../components/Navbar";
-import Sidebar from "../components/Sidebar";
+import Navbar from "./Navbar";
+import Sidebar from "./Sidebar";
 import { useMediaQuery } from "react-responsive";
 
 
