@@ -11,7 +11,7 @@ function MainLayout({
 
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   return (
-    <div className="bg-gray-100 h-screen font-sans antialiased">
+    <div className="bg-gray-100 min-h-screen font-sans antialiased">
       <Navbar
         isSidebarCollapsed={isSidebarCollapsed}
         setIsSidebarCollapsed={setIsSidebarCollapsed}
@@ -20,7 +20,7 @@ function MainLayout({
         <Sidebar isCollapsed={isSidebarCollapsed} isMobile={isMobile}/>
         <main
           className={`flex-1 p-6 mt-0 transition-all duration-300 ${
-            isSidebarCollapsed ? "md:ml-20" : "md:ml-60"
+            isSidebarCollapsed ? "md:ml-16" : "md:ml-60"
           }`}
           
         >
