@@ -10,12 +10,6 @@ import NotFound from "./pages/404";
 function App() {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
 
-  // Load sidebar state from localStorage
-  useEffect(() => {
-    const collapsed = localStorage.getItem("sidebarCollapsed") === "true";
-    setIsSidebarCollapsed(collapsed);
-  }, []);
-
   // Save sidebar state
   useEffect(() => {
     localStorage.setItem("sidebarCollapsed", isSidebarCollapsed);

@@ -1,3 +1,4 @@
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import SidebarMenuItem from "./SidebarMenuItem";
 import {
   faGauge,
@@ -7,12 +8,18 @@ import {
   faCalendar,
   faQuestionCircle,
   faInbox,
+  faExclamation,
+  faCertificate,
+  faSquareCaretLeft,
   faPaperPlane,
+  faSquareCaretRight,
+  faImage,
+  faTable,
 } from "@fortawesome/free-solid-svg-icons";
 
-function Sidebar({ isCollapsed, isMobile }) {
+function Sidebar({ isCollapsed, isMobile, setSidebarCollapsed }) {
   const menuItems = [
-    { icon: faGauge, label: "Dashboard", loc: "/home" },
+    { icon: faGauge, label: "Dashboard", loc: "/" },
     {
       icon: faUser,
       label: "Chart",
@@ -31,7 +38,7 @@ function Sidebar({ isCollapsed, isMobile }) {
       ],
     },
     {
-      icon: faEnvelope,
+      icon: faTable,
       label: "Tables",
       subItems: [
         { icon: faInbox, label: "Basic Tables", loc: "/basic-tables" },
@@ -42,18 +49,17 @@ function Sidebar({ isCollapsed, isMobile }) {
       icon: faCalendar,
       label: "UI Elements",
       subItems: [
-        { icon: faInbox, label: "Buttons", loc: "/buttons" },
-        { icon: faPaperPlane, label: "Cards", loc: "/cards" },
-        { icon: faInbox, label: "Modals", loc: "/modals" },
-        { icon: faPaperPlane, label: "Tabs", loc: "/tabs" },
-        { icon: faInbox, label: "Buttons", loc: "/buttons" },
-        { icon: faPaperPlane, label: "Cards", loc: "/cards" },
-        { icon: faInbox, label: "Modals", loc: "/modals" },
-        { icon: faPaperPlane, label: "Tabs", loc: "/tabs" },
-        { icon: faInbox, label: "Buttons", loc: "/buttons" },
-        { icon: faPaperPlane, label: "Cards", loc: "/cards" },
-        { icon: faInbox, label: "Modals", loc: "/modals" },
-        { icon: faPaperPlane, label: "Tabs", loc: "/tabs" },
+        { label: "Alerts", loc: "#" },
+        { label: "Badges", loc: "#" },
+        { label: "Buttons", loc: "#" },
+        { label: "Buttons Group", loc: "#" },
+        { label: "Cards", loc: "#" },
+        { label: "Carousel", loc: "#" },
+        { label: "Modals", loc: "#" },
+        { label: "Dropdowns", loc: "#" },
+        { label: "Notification", loc: "#" },
+        { label: "Popovers", loc: "#" },
+        { label: "Tabs", loc: "#" },
       ],
     },
   ];
@@ -62,7 +68,7 @@ function Sidebar({ isCollapsed, isMobile }) {
     <aside
       id="sidebar"
       aria-label="Sidebar Navigation"
-      className={`flex flex-col bg-white shadow-md fixed top-16 left-0 bottom-0 z-10 transition-all duration-500
+      className={`flex flex-col bg-white shadow-md absolute top-14 left-0 bottom-0 z-10 transition-all duration-500
         ${
           isMobile
             ? isCollapsed
@@ -70,7 +76,7 @@ function Sidebar({ isCollapsed, isMobile }) {
               : "w-full sidebar-visible"
             : isCollapsed
             ? "w-16 sidebar-collapsed"
-            : "w-60"
+            : "w-64"
         }`}
     >
       <div className="mb-4 px-2">
@@ -95,6 +101,8 @@ function Sidebar({ isCollapsed, isMobile }) {
               loc={item.loc}
               badge={item.badge}
               subItems={item.subItems}
+              setIsSidebarCollapsed={setSidebarCollapsed}
+              isSidebarCollapsed={isCollapsed}
             />
           ))}
         </ul>
@@ -108,9 +116,11 @@ function Sidebar({ isCollapsed, isMobile }) {
       >
         <ul>
           <SidebarMenuItem
-            icon={faQuestionCircle}
-            label={"Help & Support"}
-            loc={"/help"}
+            icon={faGithub}
+            label={"follow me on Github"}
+            loc={"/github"}
+            setIsSidebarCollapsed={setSidebarCollapsed}
+            isSidebarCollapsed={isCollapsed}
           />
         </ul>
       </div>

@@ -1,3 +1,4 @@
+// src/components/Navbar.jsx (atau path yang sesuai)
 import { useState, useRef, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faUser, faUserCircle, faCog, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
@@ -11,7 +12,7 @@ function Navbar({ isSidebarCollapsed, setIsSidebarCollapsed }) {
   };
 
   const toggleDropdown = () => {
-    setDropdownOpen(prev => !prev);
+    setDropdownOpen(!dropdownOpen);
   };
 
   useEffect(() => {
@@ -25,18 +26,22 @@ function Navbar({ isSidebarCollapsed, setIsSidebarCollapsed }) {
   }, []);
 
   return (
-    <nav className="bg-slate-800 shadow-md text-white p-2 px-6 fixed w-full top-0 z-20">
-      <div className="container mx-auto flex justify-between items-center">
-        {/* Sidebar toggle and logo */}
+    <nav className="bg-slate-800 shadow-md text-white px-2 fixed w-full top-0 z-20 h-14 flex items-center">
+      
+      <div className="container mx-auto flex justify-between items-center w-full">
+        {/* Tombol Sidebar toggle dan logo */}
         <div className="flex items-center space-x-4">
           <button
             onClick={toggleSidebar}
-            className="focus:outline-none p-1 border rounded-md hover:bg-gray-100/20"
+            className="focus:outline-none p-1 border border-transparent text-white rounded-md hover:bg-gray-100/20"
             aria-label="Toggle sidebar"
+            aria-expanded={!isSidebarCollapsed} 
+            aria-controls="sidebar"
           >
             <FontAwesomeIcon icon={faBars} className="w-6 h-6" />
           </button>
-          <img src='./src/assets/react.svg' alt="Company Logo" className="w-auto h-auto" />
+          {/* Pastikan ukuran logo tidak melebihi tinggi navbar. Contoh: h-8 (2rem) */}
+          <img src='./src/assets/react.svg' alt="Company Logo" className="h-8 w-auto" />
         </div>
 
         {/* Profile dropdown */}
@@ -56,7 +61,7 @@ function Navbar({ isSidebarCollapsed, setIsSidebarCollapsed }) {
           {dropdownOpen && (
             <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-30 border border-gray-100">
               <div className="px-4 py-3 border-b border-gray-100">
-                <p className="text-sm font-medium">Signed in as</p>
+                <p className="text-sm font-medium text-gray-900">Signed in as</p> {/* Warna teks agar terbaca di bg putih */}
                 <p className="text-sm text-gray-500 truncate">admin@example.com</p>
               </div>
               <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">
@@ -76,4 +81,4 @@ function Navbar({ isSidebarCollapsed, setIsSidebarCollapsed }) {
   );
 }
 
-export default Navbar
+export default Navbar;
