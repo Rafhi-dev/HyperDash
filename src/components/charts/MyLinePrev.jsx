@@ -1,108 +1,71 @@
-import MyLineChart from './MyLineChart';
-MyLineChart
+import MyLineChart from './MyLineChart'; // Pastikan path ini benar
 
 function MyLinePrev() {
-  const revenueData = {
-    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'],
-    datasets: [
-      {
-        label: 'Pendapatan 2024 (dalam Juta Rp)',
-        data: [150, 165, 140, 180, 200, 190, 210, 230, 220, 240, 250, 270],
-        borderColor: 'rgba(75, 192, 192, 1)',
-        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-        fill: true,
-        tension: 0.4,
-        pointBackgroundColor: 'rgba(75, 192, 192, 1)',
-        pointBorderColor: '#fff',
-        pointHoverRadius: 7,
-        pointHoverBackgroundColor: '#fff',
-        pointHoverBorderColor: 'rgba(75, 192, 192, 1)',
-      },
-    ],
-  };
+  const monthlyLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'];
+  const weeklyLabels = ['Minggu 1', 'Minggu 2', 'Minggu 3', 'Minggu 4'];
 
-  const revenueOptions = {
-    plugins: {
-      title: {
-        display: true,
-        text: 'Grafik Pendapatan Tahunan',
-        font: { size: 18 }
-      },
-      tooltip: {
-        callbacks: {
-          label: function(context) {
-            let label = context.dataset.label || '';
-            if (label) { label += ': '; }
-            if (context.parsed.y !== null) { label += 'Rp ' + context.parsed.y + ' Juta'; }
-            return label;
-          }
-        }
-      }
+  // Data untuk chart pendapatan
+  const revenueDatasets = [
+    {
+      label: 'Pendapatan 2024 (dalam Juta Rp)',
+      data: [150, 165, 140, 180, 200, 190, 210, 230, 220, 240, 250, 270],
+      color: 'rgba(75, 192, 192, 1)', // Warna garis utama
+      fill: true, // Area di bawah garis diisi warna
+      tension: 0.4, // Kelengkungan garis
+      // Opsi styling titik (opsional, akan menggunakan warna utama jika tidak dispesifikkan)
+      // pointColor: 'rgba(75, 192, 192, 1)',
+      // pointBorderColor: '#fff',
+      // pointHoverRadius: 7,
+      // pointHoverBgColor: '#fff',
+      // pointHoverBorderColor: 'rgba(75, 192, 192, 1)',
     },
-    scales: {
-      y: {
-        beginAtZero: false,
-        title: { display: true, text: 'Pendapatan (Juta Rp)' },
-        ticks: { callback: function(value) { return 'Rp ' + value; } }
-      },
-      x: {
-        title: { display: true, text: 'Bulan' }
-      }
-    }
-  };
+  ];
 
-  const visitorData = {
-    labels: ['Minggu 1', 'Minggu 2', 'Minggu 3', 'Minggu 4'],
-    datasets: [
-      {
-        label: 'Pengunjung Website A',
-        data: [1200, 1900, 3000, 5000],
-        borderColor: 'rgba(255, 99, 132, 1)',
-        backgroundColor: 'rgba(255, 99, 132, 0.1)',
-        fill: 'start',
-        tension: 0.3,
-      },
-      {
-        label: 'Pengunjung Website B',
-        data: [800, 1500, 2800, 4500],
-        borderColor: 'rgba(54, 162, 235, 1)',
-        backgroundColor: 'rgba(54, 162, 235, 0.1)',
-        fill: 'start',
-        tension: 0.3,
-      },
-    ],
-  };
-
-  const visitorOptions = {
-    plugins: {
-      title: {
-        display: true,
-        text: 'Data Pengunjung Mingguan',
-        font: { size: 18 }
-      },
-      legend: { position: 'bottom' }
+  // Data untuk chart pengunjung
+  const visitorDatasets = [
+    {
+      label: 'Pengunjung Website A',
+      data: [1200, 1900, 3000, 2000],
+      color: 'rgba(255, 99, 132, 1)',
+      fill: 'start', // Bisa juga boolean atau 'origin', 'end'
+      tension: 0.3,
     },
-    interaction: { mode: 'index', intersect: false },
+    {
+      label: 'Pengunjung Website B',
+      data: [800, 1500, 2800, 4500],
+      color: 'rgba(54, 162, 235, 1)',
+      fill: 'start',
+      tension: 0.3,
+    },
+  ];
+
+  // Callback untuk format tooltip pendapatan
+  const revenueTooltipCallback = (context) => {
+    let label = context.dataset.label || '';
+    if (label) { label += ': '; }
+    if (context.parsed.y !== null) { label += 'Rp ' + context.parsed.y + ' Juta'; }
+    return label;
   };
+
+  // Callback untuk format ticks sumbu Y pendapatan
+  const revenueYTicksCallback = (value) => 'Rp ' + value;
 
   return (
-    // Container ini akan mengisi <main> dari MainLayout.jsx
-    // Padding p-6 dari MainLayout sudah ada jika Outlet adalah children langsung dari main.
-    // Jika Outlet dibungkus div lagi di MainLayout, maka padding mungkin perlu di sini.
-    // Untuk contoh ini, kita asumsikan MyLinePrev adalah konten utama yang butuh padding sendiri.
-    <div className="p-6 space-y-12"> {/* Padding untuk konten halaman */}
+    <div className="p-6 space-y-12">
       <h1 className="text-2xl pb-4 md:text-3xl font-bold text-gray-800 mb-6 text-center">
-        Line Chart Sample
+        Line Chart Sample (Refactored)
       </h1>
 
       {/* Baris Pertama: Analisis Pendapatan dan Chart Default berdampingan */}
       <section className="md:flex md:gap-8 space-y-12 md:space-y-0">
-                <div className="md:w-1/2">
+        <div className="md:w-1/2">
           <h2 className="text-xl font-semibold text-gray-700 mb-4 text-center">
             Chart Default (Contoh)
           </h2>
           <MyLineChart
-            containerClassName="w-full"
+            // Tidak ada labels atau datasetsConfig, jadi akan menggunakan default internal
+            titleText="Line Chart Bawaan"
+            containerClassName="w-full" // Menimpa default width responsif
             chartHeight="45vh"
             minChartHeight="320px"
           />
@@ -112,14 +75,19 @@ function MyLinePrev() {
             Analisis Pendapatan
           </h2>
           <MyLineChart
-            chartData={revenueData}
-            chartOptions={revenueOptions}
+            labels={monthlyLabels}
+            datasetsConfig={revenueDatasets}
+            titleText="Grafik Pendapatan Tahunan"
+            xAxisLabel="Bulan"
+            yAxisLabel="Pendapatan (Juta Rp)"
+            yTicksCallback={revenueYTicksCallback}
+            tooltipLabelCallback={revenueTooltipCallback}
+            beginAtZero={false} // Untuk pendapatan, mungkin tidak mulai dari nol
             containerClassName="w-full"
             chartHeight="45vh"
             minChartHeight="320px"
           />
         </div>
-
       </section>
 
       {/* Baris Kedua: Perbandingan Pengunjung Website */}
@@ -128,32 +96,23 @@ function MyLinePrev() {
           Perbandingan Pengunjung Website
         </h2>
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
-          {/* Menggunakan grid untuk konsistensi, bukan flex-1 manual */}
-          <div className="bg-blue-50 p-2 rounded-lg">
+          <div className="p-2 rounded-lg">
             <MyLineChart
-              chartData={visitorData}
-              chartOptions={{
-                ...visitorOptions,
-                plugins: {
-                  ...visitorOptions.plugins,
-                  title: { ...visitorOptions.plugins.title, text: "Data Website A & B" }
-                }
-              }}
+              labels={weeklyLabels}
+              datasetsConfig={visitorDatasets} // Menggunakan kedua dataset
+              titleText="Data Pengunjung Website A & B"
+              legendPosition="bottom" // Mengubah posisi legenda
               containerClassName="w-full"
               chartHeight="45vh"
               minChartHeight="320px"
             />
           </div>
-          <div className="bg-green-50 p-2 rounded-lg">
+          <div className="p-2 rounded-lg">
             <MyLineChart
-              chartData={{ ...visitorData, datasets: [visitorData.datasets[0]] }} // Hanya data A
-              chartOptions={{
-                ...visitorOptions,
-                plugins: {
-                  ...visitorOptions.plugins,
-                  title: { ...visitorOptions.plugins.title, text: "Data Website A Saja" }
-                }
-              }}
+              labels={weeklyLabels}
+              datasetsConfig={[visitorDatasets[0]]} // Hanya data Website A
+              titleText="Data Pengunjung Website A Saja"
+              legendPosition="bottom"
               containerClassName="w-full"
               chartHeight="45vh"
               minChartHeight="320px"
