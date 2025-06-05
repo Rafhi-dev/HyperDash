@@ -45,7 +45,7 @@ function SidebarMenuItem({
 
   // Classes untuk warna dan hover state
   const colorClasses = isActive 
-    ? "bg-blue-600 text-white shadow-md" 
+    ? "bg-blue-500 text-white shadow-md" 
     : depth > 0 
       ? "text-gray-600 hover:bg-gray-200 hover:text-gray-900"
       : "text-gray-700 hover:bg-blue-200 hover:text-blue-700 hover:shadow-sm";

@@ -2,18 +2,6 @@ import { faGithub, faUikit, faWpforms } from "@fortawesome/free-brands-svg-icons
 import SidebarMenuItem from "./SidebarMenuItem";
 import {
   faGauge,
-  faUser,
-  faCog,
-  faEnvelope,
-  faCalendar,
-  faQuestionCircle,
-  faInbox,
-  faExclamation,
-  faCertificate,
-  faSquareCaretLeft,
-  faPaperPlane,
-  faSquareCaretRight,
-  faImage,
   faTable,
   faChartLine,
 } from "@fortawesome/free-solid-svg-icons";

@@ -9,6 +9,7 @@ import NotFound from "./pages/404";
 import MyLinePrev from "./components/charts/MyLinePrev";
 import MyBarPrev from "./components/charts/MyBarPrev";
 import MyPiePrev from "./components/charts/MyPiePrev";
+import Dashboard1 from "./components/layout/contents/Dashboard1";
 
 function App() {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
@@ -31,7 +32,7 @@ function App() {
             />
           }
         >
-          <Route path="/" element={<MainContent />} />
+          <Route path="/" element={<Dashboard1 />} />
           <Route path="/line-chart" element={<MyLinePrev/>} />
           <Route path="/bar-chart" element={<MyBarPrev/>} />
           <Route path="/pie-chart" element={<MyPiePrev />} />
