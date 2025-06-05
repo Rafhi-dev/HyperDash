@@ -1,4 +1,4 @@
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faUikit, faWpforms } from "@fortawesome/free-brands-svg-icons";
 import SidebarMenuItem from "./SidebarMenuItem";
 import {
   faGauge,
@@ -15,38 +15,42 @@ import {
   faSquareCaretRight,
   faImage,
   faTable,
+  faChartLine,
 } from "@fortawesome/free-solid-svg-icons";
+import { useLocation } from "react-router-dom";
 
 function Sidebar({ isCollapsed, isMobile, setSidebarCollapsed }) {
+  const location = useLocation();
+
   const menuItems = [
     { icon: faGauge, label: "Dashboard", loc: "/" },
     {
-      icon: faUser,
+      icon: faChartLine,
       label: "Chart",
       subItems: [
-        { icon: faInbox, label: "Line Chart", loc: "/line-chart" },
-        { icon: faPaperPlane, label: "Bar Chart", loc: "/bar-chart" },
-        { icon: faInbox, label: "Pie Chart", loc: "/Pie-chart" },
+        { label: "Line Chart", loc: "/line-chart" },
+        { label: "Bar Chart", loc: "/bar-chart" },
+        { label: "Pie Chart", loc: "/Pie-chart" },
       ],
     },
     {
-      icon: faCog,
+      icon: faWpforms,
       label: "Form",
       subItems: [
-        { icon: faInbox, label: "Form Elements", loc: "/elements-form" },
-        { icon: faPaperPlane, label: "Form Layout", loc: "/layout-form" },
+        { label: "Form Elements", loc: "/elements-form" },
+        { label: "Form Layout", loc: "/layout-form" },
       ],
     },
     {
       icon: faTable,
       label: "Tables",
       subItems: [
-        { icon: faInbox, label: "Basic Tables", loc: "/basic-tables" },
-        { icon: faPaperPlane, label: "Data Tables", loc: "/data-tables" },
+        { label: "Basic Tables", loc: "/basic-tables" },
+        { label: "Data Tables", loc: "/data-tables" },
       ],
     },
     {
-      icon: faCalendar,
+      icon: faUikit,
       label: "UI Elements",
       subItems: [
         { label: "Alerts", loc: "#" },
@@ -64,11 +68,20 @@ function Sidebar({ isCollapsed, isMobile, setSidebarCollapsed }) {
     },
   ];
 
+  const markActive = (items) =>
+    items.map((item) => ({
+      ...item,
+      isActive: item.loc === location.pathname,
+      subItems: item.subItems ? markActive(item.subItems) : undefined,
+    }));
+
+  const menuItemsWithActive = markActive(menuItems);
+
   return (
     <aside
       id="sidebar"
       aria-label="Sidebar Navigation"
-      className={`flex flex-col bg-white shadow-md absolute top-14 left-0 bottom-0 z-10 transition-all duration-500
+      className={`flex flex-col bg-white shadow-md fixed top-14 left-0 bottom-0 z-10 transition-all duration-500
         ${
           isMobile
             ? isCollapsed
@@ -93,14 +106,10 @@ function Sidebar({ isCollapsed, isMobile, setSidebarCollapsed }) {
       {/* Area scroll hanya untuk menu */}
       <div className="flex-1 px-2 overflow-y-auto">
         <ul className="space-y-1">
-          {menuItems.map((item, index) => (
+          {menuItemsWithActive.map((item, idx) => (
             <SidebarMenuItem
-              key={index}
-              icon={item.icon}
-              label={item.label}
-              loc={item.loc}
-              badge={item.badge}
-              subItems={item.subItems}
+              key={idx}
+              {...item}
               setIsSidebarCollapsed={setSidebarCollapsed}
               isSidebarCollapsed={isCollapsed}
             />
@@ -110,7 +119,7 @@ function Sidebar({ isCollapsed, isMobile, setSidebarCollapsed }) {
 
       {/* Footer tetap */}
       <div
-        className={`px-2 border-t border-gray-100 pt-4 ${
+        className={`px-2 border-t border-gray-100 ${
           isCollapsed ? "flex justify-center" : ""
         }`}
       >
