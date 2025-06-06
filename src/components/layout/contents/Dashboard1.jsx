@@ -60,14 +60,14 @@ const Dashboard1 = () => {
           default: 'bounce',
         },
         random: false,
-        speed: 2,
+        speed: 1,
         straight: false,
       },
       number: {
         density: {
           enable: true,
         },
-        value: 210, // Jumlah partikel
+        value: 250, // Jumlah partikel
       },
       opacity: {
         value: 0.3,
@@ -148,12 +148,12 @@ const Dashboard1 = () => {
         />
         <div className="relative z-10 p-6"> {/* Konten header harus memiliki z-index lebih tinggi */}
           <h1 className="text-2xl md:text-3xl font-bold">
-            Ringkasan Dashboard
+            Greetings Sir.
           </h1>
           <p className="mt-2 opacity-90">
-            Selamat datang di HyperDash! Berikut adalah ringkasan metrik Anda saat ini.
+            Welcome to HyperDash, this is a simple dashboard template built with React and Tailwind CSS.
           </p>
-          <p className="mt-1 text-xs opacity-70">v0.2.0-Dev</p>
+          <p className="mt-1 text-xs opacity-70">v0.0.0-Dev</p>
         </div>
       </div>
 
@@ -253,7 +253,7 @@ const Dashboard1 = () => {
       </div>
       
       <footer className="text-center text-sm text-gray-500 py-4">
-        &copy; {new Date().getFullYear()} HyperDash. Hak cipta dilindungi.
+        &copy; {new Date().getFullYear()} HyperDash.
       </footer>
     </div>
   );

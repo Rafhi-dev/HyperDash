@@ -1,9 +1,10 @@
-import { faGithub, faUikit, faWpforms } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faPage4, faPagelines, faUikit, faWpforms } from "@fortawesome/free-brands-svg-icons";
 import SidebarMenuItem from "./SidebarMenuItem";
 import {
   faGauge,
   faTable,
   faChartLine,
+  faFile,
 } from "@fortawesome/free-solid-svg-icons";
 import { useLocation } from "react-router-dom";
 
@@ -12,6 +13,7 @@ function Sidebar({ isCollapsed, isMobile, setSidebarCollapsed }) {
 
   const menuItems = [
     { icon: faGauge, label: "Dashboard", loc: "/" },
+    { icon: faFile, label: "Pages", loc: "/pages" },
     {
       icon: faChartLine,
       label: "Chart",
@@ -25,7 +27,14 @@ function Sidebar({ isCollapsed, isMobile, setSidebarCollapsed }) {
       icon: faWpforms,
       label: "Form",
       subItems: [
-        { label: "Form Elements", loc: "/elements-form" },
+        { label: "Form Elements", subItems: [
+          { label: "Input", loc: "/form-input" },
+          { label: "Textarea", loc: "/form-textarea" },
+          { label: "Select", loc: "/form-select" },
+          { label: "Checkbox", loc: "/form-checkbox" },
+          { label: "Radio", loc: "/form-radio" },
+          { label: "Switch", loc: "/form-switch" },
+        ]},
         { label: "Form Layout", loc: "/layout-form" },
       ],
     },

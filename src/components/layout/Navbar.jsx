@@ -42,6 +42,7 @@ function Navbar({ isSidebarCollapsed, setIsSidebarCollapsed }) {
           </button>
           {/* Pastikan ukuran logo tidak melebihi tinggi navbar. Contoh: h-8 (2rem) */}
           <img src='./src/assets/react.svg' alt="Company Logo" className="h-8 w-auto" />
+        <p className='text-lg italic decoration-white font-bold h-8 w-auto'>HyperDash</p>
         </div>
 
         {/* Profile dropdown */}
