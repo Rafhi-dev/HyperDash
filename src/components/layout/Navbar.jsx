@@ -1,4 +1,3 @@
-// src/components/Navbar.jsx (atau path yang sesuai)
 import { useState, useRef, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faUser, faUserCircle, faCog, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
@@ -27,9 +26,7 @@ function Navbar({ isSidebarCollapsed, setIsSidebarCollapsed }) {
 
   return (
     <nav className="bg-slate-800 shadow-md text-white px-2 fixed w-full top-0 z-20 h-14 flex items-center">
-      
       <div className="container mx-auto flex justify-between items-center w-full">
-        {/* Tombol Sidebar toggle dan logo */}
         <div className="flex items-center space-x-4">
           <button
             onClick={toggleSidebar}
@@ -40,12 +37,10 @@ function Navbar({ isSidebarCollapsed, setIsSidebarCollapsed }) {
           >
             <FontAwesomeIcon icon={faBars} className="w-6 h-6" />
           </button>
-          {/* Pastikan ukuran logo tidak melebihi tinggi navbar. Contoh: h-8 (2rem) */}
           <img src='./src/assets/react.svg' alt="Company Logo" className="h-8 w-auto" />
-        <p className='text-lg italic decoration-white font-bold h-8 w-auto'>HyperDash</p>
+          <p className='text-lg italic decoration-white font-bold h-8 w-auto'>HyperDash</p>
         </div>
 
-        {/* Profile dropdown */}
         <div className="relative" ref={dropdownRef}>
           <button
             onClick={toggleDropdown}
