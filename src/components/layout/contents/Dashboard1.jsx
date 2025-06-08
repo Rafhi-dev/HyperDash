@@ -169,7 +169,7 @@ const Dashboard1 = () => {
             yAxisLabel="Pendapatan (USD)"
             legendPosition="bottom"
             containerClassName="w-full" // MyChart components handle their own card bg/shadow
-            chartHeight="350px"
+            chartHeight="300px"
             minChartHeight="300px"
             yTicksCallback={(value) => `$${value/1000}k`}
           />
@@ -185,9 +185,9 @@ const Dashboard1 = () => {
             titleText="Sumber Trafik Website"
             legendPosition="right"
             containerClassName="w-full"
-            chartHeight="350px"
+            chartHeight="300px"
             minChartHeight="300px"
-            cutout="30%" // Contoh donat
+            cutout="70%" // Contoh bologan tengah
           />
         </div>
       </div>
@@ -200,7 +200,7 @@ const Dashboard1 = () => {
           titleText="Pendaftaran Pengguna Baru per Wilayah (Q2)"
           xAxisLabel="Wilayah"
           yAxisLabel="Jumlah Pengguna Baru"
-          indexAxis="x" // Grafik batang vertikal
+          indexAxis="x"
           containerClassName="w-full"
           chartHeight="350px"
           minChartHeight="300px"

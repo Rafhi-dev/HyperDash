@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+
 import MainLayout from "../components/layout/MainLayout";
 import Dashboard1 from "../components/layout/contents/Dashboard1";
 import MyPiePrev from "../components/charts/MyPiePrev";
@@ -6,6 +7,7 @@ import MyBarPrev from "../components/charts/MyBarPrev";
 import MyLinePrev from "../components/charts/MyLinePrev";
 import LoginForm from "../pages/LoginForm";
 import NotFound from "../pages/404";
+import Ujicoba from "../content/Ujicoba";
 
 
 const HyRoute = ({getCollapased, getSetCollapsed}) => {
@@ -21,6 +23,8 @@ const HyRoute = ({getCollapased, getSetCollapsed}) => {
             />
           }
         >
+          
+        <Route path="/ujicoba" element={<Ujicoba />} />
           <Route path="/" element={<Dashboard1 />} />
           <Route path="/line-chart" element={<MyLinePrev/>} />
           <Route path="/bar-chart" element={<MyBarPrev/>} />
