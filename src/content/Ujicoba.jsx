@@ -5,6 +5,7 @@ import CheckBox from "../components/form/CheckBox";
 import Radio from "../components/form/Radio";
 import Switch from "../components/ui/switch/Switch";
 import Alert from "../components/ui/alerts/Alert";
+import Btn from "../components/ui/button/ButtonX";
 
 const Ujicoba = () => {
   //seting select
@@ -44,20 +45,20 @@ const Ujicoba = () => {
 
   return (
     <div className="h-full">
-      <div className="bg-gradient-to-r from-zinc-800 to-zinc-800 pt-8 h-40">
+      <div className="bg-gradient-to-r from-neutral-900 to-neutral-800 pt-8 h-40">
         <p className="text-white text-4xl antialiased font-semibold text-center">
           Layout 1
         </p>
       </div>
       {/* area 1 */}
       <div className="flex flex-col sm:flex-row gap-4 -mt-6 m-4 z-10">
-        <div className="w-full sm:w-1/3 bg-white p-4 rounded-lg shadow-md">
+        <div className="w-full sm:flex-1 bg-white p-4 rounded-lg shadow-md">
           <p>Ini adalah konten pertama</p>
         </div>
-        <div className="w-full sm:w-1/3 bg-white p-4 rounded-lg shadow-md">
+        <div className="w-full sm:flex-1 bg-white p-4 rounded-lg shadow-md">
           <p>Ini adalah konten kedua</p>
         </div>
-        <div className="w-full sm:w-1/3 bg-white p-4 rounded-lg shadow-md">
+        <div className="w-full sm:flex-1 bg-white p-4 rounded-lg shadow-md">
           <p>Ini adalah konten ketiga</p>
         </div>
       </div>
@@ -115,7 +116,9 @@ const Ujicoba = () => {
             className="mt-4"
           />
 
-          <Alert msg={"succes"} value={"Alert Success"} className="mt-4" />
+          <Alert success msg={"Alert Messages"} />
+
+          <Btn />
         </div>
       </div>
 
