@@ -55,7 +55,7 @@ function SidebarMenuItem({
     mt-2 pt-1 space-y-1 overflow-hidden transition-all duration-300 ease-in-out
     ${depth === 0 ? "ml-4 pl-4" : "ml-2 pl-2"}
     ${isSubmenuOpen 
-      ? "max-h-screen opacity-100 visible" 
+      ? "max-h-full opacity-100 visible" 
       : "max-h-0 opacity-0 invisible"
     }
   `;
@@ -127,7 +127,7 @@ function SidebarMenuItem({
       {subItems && subItems.length > 0 && !isSidebarCollapsed && (
         <div className="relative">
           {/* Garis vertikal untuk indikator submenu */}
-          <div className={`absolute left-6 top-0 bottom-0 w-px bg-gray-200 ${isSubmenuOpen ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}></div>
+          <div className={`absolute left-6 top-0 bottom-0 w-px bg-blue-300 ${isSubmenuOpen ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}></div>
           
           <ul
             className={submenuClasses}

@@ -1,8 +1,17 @@
 import Input from "../components/form/input";
+import Select from "../components/form/Select";
 
 const Ujicoba = () => {
+
+     const countries = [
+    { value: '', label: 'Select a country' },
+    { value: 'us', label: 'United States' },
+    { value: 'id', label: 'Indonesia' },
+    { value: 'uk', label: 'United Kingdom' },
+  ];
+
   return (
-    <div className="min-h-screen">
+    <div className="h-full">
       <div className="bg-gradient-to-r from-slate-800/90 to-slate-600/90 pt-8 h-40">
         <p className="text-white text-4xl antialiased font-semibold text-center">Layout 1</p>
       </div>
@@ -32,9 +41,16 @@ const Ujicoba = () => {
         <div className="w-full bg-white rounded-lg shadow-md p-4 h-screen">
           <p>Konten ke 6</p>
           <Input label={"Username"} disabled={true} name={"input"} placeholder={"input 1"} />
+          <Select name={"country"} options={countries} />
+
         </div>
       </div>
+      
+      <footer className="text-center text-sm text-gray-500 py-4">
+        &copy; {new Date().getFullYear()} HyperDash.
+      </footer>
     </div>
+    
   );
 };
 

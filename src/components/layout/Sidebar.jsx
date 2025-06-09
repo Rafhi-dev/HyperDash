@@ -40,7 +40,7 @@ function Sidebar({ isCollapsed, isMobile, setSidebarCollapsed }) {
       subItems: [
         { label: "Line Chart", loc: "/line-chart" },
         { label: "Bar Chart", loc: "/bar-chart" },
-        { label: "Pie Chart", loc: "/Pie-chart" },
+        { label: "Pie Chart", loc: "/pie-chart" },
       ],
     },
     {
@@ -112,7 +112,7 @@ function Sidebar({ isCollapsed, isMobile, setSidebarCollapsed }) {
             : "w-64"
         }`}
     >
-      <div className="mb-4 px-2">
+      <div className="px-2">
         <h2
           id="sidebar-title"
           className={`text-lg font-semibold text-gray-500 uppercase tracking-wider ${
@@ -124,11 +124,11 @@ function Sidebar({ isCollapsed, isMobile, setSidebarCollapsed }) {
       </div>
 
       {/* Area scroll hanya untuk menu */}
-      <div className="flex-1 px-2 overflow-y-auto">
+      <div className="flex-1 px-2 pt-4 overflow-y-auto">
         <ul className="space-y-1">
-          {menuItemsWithActive.map((item, idx) => (
+          {menuItemsWithActive.map((item, index) => (
             <SidebarMenuItem
-              key={idx}
+              key={item.label + index}
               {...item}
               setIsSidebarCollapsed={setSidebarCollapsed}
               isSidebarCollapsed={isCollapsed}

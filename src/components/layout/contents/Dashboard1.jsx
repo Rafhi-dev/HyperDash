@@ -136,7 +136,7 @@ const Dashboard1 = () => {
 
 
   return (
-    <div className="p-4 md:p-6 space-y-6 bg-gray-100 min-h-screen">
+    <div className="p-4 md:p-6 space-y-6 bg-gray-100 h-full">
       {/* Bagian Header dengan Partikel */}
       <div className="relative bg-gradient-to-r from-slate-900 to-slate-600 text-white rounded-lg shadow-xl overflow-hidden">
         <Particles

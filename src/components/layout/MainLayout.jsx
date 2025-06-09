@@ -11,14 +11,11 @@ function MainLayout({
 }) {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
-  const navbarHeight = 14;
-  const navbarHeightOffsetClass = `pt-${navbarHeight}`;
-
-  const sidebarWidth = 64;
-  const sidebarCollapsedWidth = 16;
+  // Pastikan tinggi navbar konsisten dengan Sidebar (misal h-14 = 56px)
+  const navbarHeightOffsetClass = "pt-14";
 
   return (
-    <div className="bg-gray-100 min-h-screen font-sans antialiased">
+    <div className="bg-gray-200 min-h-screen font-sans antialiased">
       <Navbar
         isSidebarCollapsed={isSidebarCollapsed}
         setIsSidebarCollapsed={setIsSidebarCollapsed}
@@ -32,8 +29,8 @@ function MainLayout({
         <main
           className={`flex-1 transition-all duration-300 ease-in-out ${
             isMobile ? 'ml-0'
-            : isSidebarCollapsed ? `md:ml-${sidebarCollapsedWidth}` : `md:ml-${sidebarWidth}`
-          } overflow-y-auto`}
+            : isSidebarCollapsed ? 'md:ml-16' : 'md:ml-64'
+          } overflow-y-auto `}
         >
           <Outlet />
         </main>

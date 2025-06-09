@@ -26,7 +26,7 @@ function Navbar({ isSidebarCollapsed, setIsSidebarCollapsed }) {
 
   return (
     <nav className="bg-slate-800 shadow-md text-white px-2 fixed w-full top-0 z-20 h-14 flex items-center">
-      <div className="container mx-auto flex justify-between items-center w-full">
+      <div className="flex justify-between items-center w-full">
         <div className="flex items-center space-x-4">
           <button
             onClick={toggleSidebar}
