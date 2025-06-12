@@ -1,14 +1,9 @@
-// src/layouts/MainLayout.jsx (atau path yang sesuai)
-import React from 'react';
 import { Outlet } from "react-router-dom";
-import Navbar from "./Navbar";
-import Sidebar from "./Sidebar";
+import Navbar from "../components/layout/Navbar";
+import Sidebar from "../components/layout/Sidebar";
 import { useMediaQuery } from "react-responsive";
 
-function MainLayout({
-  isSidebarCollapsed,
-  setIsSidebarCollapsed,
-}) {
+function MainLayout({ isSidebarCollapsed, setIsSidebarCollapsed }) {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
   // Pastikan tinggi navbar konsisten dengan Sidebar (misal h-14 = 56px)
@@ -28,9 +23,8 @@ function MainLayout({
         />
         <main
           className={`flex-1 transition-all duration-300 ease-in-out ${
-            isMobile ? 'ml-0'
-            : isSidebarCollapsed ? 'md:ml-16' : 'md:ml-64'
-          } overflow-y-auto `}
+            isMobile ? "ml-0" : isSidebarCollapsed ? "md:ml-16" : "md:ml-64"
+          } overflow-y-auto`}
         >
           <Outlet />
         </main>

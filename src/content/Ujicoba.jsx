@@ -6,6 +6,7 @@ import Radio from "../components/form/Radio";
 import Switch from "../components/ui/switch/Switch";
 import Alert from "../components/ui/alerts/Alert";
 import Btn from "../components/ui/button/ButtonX";
+import Card from "../components/ui/card/Cards";
 
 const Ujicoba = () => {
   //seting select
@@ -121,7 +122,19 @@ const Ujicoba = () => {
           <Btn />
         </div>
       </div>
-
+      <div className="flex gap-4 m-4">
+        <Card
+          imgsrc={"https://picsum.photos/id/1018/400/250"}
+          title={"Judul Card"}
+        >
+          <p class="text-gray-700 text-base">
+            Ini adalah konten atau deskripsi singkat di dalam card. Anda bisa
+            menulis beberapa kalimat di sini untuk menjelaskan isi dari card
+            tersebut.
+          </p>
+          <Btn />
+        </Card>
+      </div>
       <footer className="text-center text-sm text-gray-500 py-4">
         &copy; {new Date().getFullYear()} HyperDash.
       </footer>

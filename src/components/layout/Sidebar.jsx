@@ -19,10 +19,14 @@ function Sidebar({ isCollapsed, isMobile, setSidebarCollapsed }) {
 
   const menuItems = [
     //edit atau tambahkan menu sidbar di sini ya gais
-    { icon: faGauge, label: "Dashboard", subItems: [
-      { label: "Dashboard 1", loc: "/" },
-      { label: "Ujicoba", loc: "/ujicoba"},
-    ]},
+    {
+      icon: faGauge,
+      label: "Dashboard",
+      subItems: [
+        { label: "Dashboard 1", loc: "/" },
+        { label: "Ujicoba", loc: "/ujicoba" },
+      ],
+    },
     {
       icon: faFile,
       label: "Pages",
@@ -34,6 +38,10 @@ function Sidebar({ isCollapsed, isMobile, setSidebarCollapsed }) {
         { label: "Blank", loc: "/blank" },
       ],
     },
+    ,
+  ];
+
+  const menuItems2 = [
     {
       icon: faChartLine,
       label: "Chart",
@@ -73,12 +81,10 @@ function Sidebar({ isCollapsed, isMobile, setSidebarCollapsed }) {
       icon: faUikit,
       label: "UI Elements",
       subItems: [
-        { label: "Alerts", loc: "#" },
-        { label: "Badges", loc: "#" },
-        { label: "Buttons", loc: "#" },
+        { label: "Alerts", loc: "/alerts" },
+        { label: "Buttons", loc: "/btn" },
         { label: "Buttons Group", loc: "#" },
-        { label: "Cards", loc: "#" },
-        { label: "Carousel", loc: "#" },
+        { label: "Cards", loc: "/cards" },
         { label: "Modals", loc: "#" },
         { label: "Dropdowns", loc: "#" },
         { label: "Notification", loc: "#" },
@@ -97,6 +103,8 @@ function Sidebar({ isCollapsed, isMobile, setSidebarCollapsed }) {
 
   const menuItemsWithActive = markActive(menuItems);
 
+  const menuItemsWithActive2 = markActive(menuItems2);
+
   return (
     <aside
       id="sidebar"
@@ -112,21 +120,43 @@ function Sidebar({ isCollapsed, isMobile, setSidebarCollapsed }) {
             : "w-64"
         }`}
     >
-      <div className="px-2">
-        <h2
-          id="sidebar-title"
-          className={`text-lg font-semibold text-gray-500 uppercase tracking-wider ${
-            isCollapsed ? "text-center text-xs" : ""
-          }`}
-        >
-          {isCollapsed ? "Menu" : "Menu"}
-        </h2>
-      </div>
+      <div className="flex-1 px-2 overflow-y-auto">
+        <div className="px-2">
+          <h2
+            id="sidebar-title"
+            className={`text-md font-semibold text-gray-500 uppercase tracking-wider ${
+              isCollapsed ? "text-center text-xs" : "py-2"
+            }`}
+          >
+            {isCollapsed ? "" : "Menu"}
+          </h2>
+        </div>
 
-      {/* Area scroll hanya untuk menu */}
-      <div className="flex-1 px-2 pt-4 overflow-y-auto">
-        <ul className="space-y-1">
+        {/* Area scroll hanya untuk menu */}
+
+        <ul className="space-y-1 py-2">
           {menuItemsWithActive.map((item, index) => (
+            <SidebarMenuItem
+              key={item.label + index}
+              {...item}
+              setIsSidebarCollapsed={setSidebarCollapsed}
+              isSidebarCollapsed={isCollapsed}
+            />
+          ))}
+        </ul>
+
+        <div className="px-2">
+          <h2
+            id="sidebar-title"
+            className={`text-sm font-semibold text-gray-500 uppercase tracking-wider ${
+              isCollapsed ? "text-center text-xs" : "py-2"
+            }`}
+          >
+            {isCollapsed ? "Components" : "Components"}
+          </h2>
+        </div>
+        <ul className="space-y-1 py-2">
+          {menuItemsWithActive2.map((item, index) => (
             <SidebarMenuItem
               key={item.label + index}
               {...item}
@@ -147,7 +177,7 @@ function Sidebar({ isCollapsed, isMobile, setSidebarCollapsed }) {
           <SidebarMenuItem
             icon={faGithub}
             label={"follow me on Github"}
-            loc={"/github"}
+            loc={"https://github.com/rafhi-dev"}
             setIsSidebarCollapsed={setSidebarCollapsed}
             isSidebarCollapsed={isCollapsed}
           />
