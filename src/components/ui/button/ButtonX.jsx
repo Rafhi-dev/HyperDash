@@ -4,7 +4,11 @@ const Btn = ({
   onClick,
   value = "Submit",
   children,
-  color,
+  primary = false,
+  secondary = false,
+  success = false,
+  warning = false,
+  danger = false,
   customColor = "",
   outline = false,
   className = "",
@@ -14,33 +18,33 @@ const Btn = ({
       type={`${type}`}
       onSubmit={onSubmit}
       onClick={onClick}
-      className={`px-4 py-2 my-4 font-semibold rounded-lg shadow-md
+      className={`px-4 py-2 my-2 font-semibold rounded-lg shadow-md
         ${
           outline
-            ? ` bg-tranparent ${
-                color === "primary"
+            ? `bg-tranparent ${
+                primary
                   ? "text-blue-600 border border-blue-500 hover:bg-blue-500 hover:text-white"
-                  : color === "secondary"
+                  : secondary
                   ? "text-gray-600 border border-gray-500 hover:bg-gray-500 hover:text-white"
-                  : color === "success"
+                  : success
                   ? "text-emerald-600 border border-emerald-500 hover:bg-emerald-500 hover:text-white"
-                  : color === "warning"
+                  : warning
                   ? "text-yellow-600 border border-yellow-500 hover:bg-yellow-500 hover:text-white"
-                  : color === "danger"
+                  : danger
                   ? "text-red-600 border border-red-500 hover:bg-red-500 hover:text-white"
                   : customColor ||
-                    "text-blue-600 border border-blue-500 hover:bg-blue-500 hover:text-white"
+                    "text-sky-600 border border-sky-500 hover:bg-sky-500 hover:text-white"
               }`
             : `${
-                color === "primary"
+                primary
                   ? "bg-blue-500 hover:bg-blue-600 text-white "
-                  : color === "secondary"
+                  : secondary
                   ? "bg-gray-500 hover:bg-gray-600 text-white "
-                  : color === "success"
+                  : success
                   ? "bg-emerald-500 hover:bg-emerald-600 text-white "
-                  : color === "warning"
+                  : warning
                   ? "bg-yellow-500 hover:bg-yellow-600 text-white "
-                  : color === "danger"
+                  : danger
                   ? "bg-red-500 hover:bg-red-600 text-white "
                   : customColor || "bg-sky-500 hover:bg-sky-600 text-white "
               }`

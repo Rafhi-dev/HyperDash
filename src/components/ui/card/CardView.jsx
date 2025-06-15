@@ -3,7 +3,7 @@ import Card from "./Cards";
 
 const CardView = () => {
   return (
-    <div>
+    <>
       <div className="flex flex-col sm:flex-row gap-4 m-4 z-10">
         <Card
           w="sm"
@@ -21,7 +21,7 @@ const CardView = () => {
         </Card>
 
         <div className="flex-1">
-          <Card w="md" title={"Card Default"}>
+          <Card w="full" title={"Card Default"}>
             <p className="text-gray-700 text-base">
               Ini adalah konten atau deskripsi singkat di dalam card. Anda bisa
               menulis beberapa kalimat di sini untuk menjelaskan isi dari card
@@ -45,7 +45,7 @@ const CardView = () => {
           </p>
         </Card>
       </div>
-    </div>
+    </>
   );
 };
 

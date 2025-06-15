@@ -1,4 +1,3 @@
-
 .sidebar-collapsed .sidebar-text,
 .sidebar-collapsed #sidebar-title {
   display: none;
@@ -27,6 +26,25 @@ main {
   transition: margin-left 0.5s ease;
 }
 
+/* Mengatur lebar scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
 
+/* Mengatur warna latar belakang track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Mengatur warna dan bentuk thumb */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 6px;
+}
+
+/* Mengubah warna thumb saat di-hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 
 @import "tailwindcss";

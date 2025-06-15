@@ -1,7 +1,5 @@
 import {
   faGithub,
-  faPage4,
-  faPagelines,
   faUikit,
   faWpforms,
 } from "@fortawesome/free-brands-svg-icons";
@@ -46,7 +44,7 @@ function Sidebar({ isCollapsed, isMobile, setSidebarCollapsed }) {
       icon: faChartLine,
       label: "Chart",
       subItems: [
-        { label: "Line Chart", loc: "/line-chart" },
+        { label: "Line Chart", loc: "/line" },
         { label: "Bar Chart", loc: "/bar-chart" },
         { label: "Pie Chart", loc: "/pie-chart" },
       ],
