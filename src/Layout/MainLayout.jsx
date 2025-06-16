@@ -2,6 +2,10 @@ import { Outlet } from "react-router-dom";
 import Navbar from "../components/layout/Navbar";
 import Sidebar from "../components/layout/Sidebar";
 import { useMediaQuery } from "react-responsive";
+import {
+  sidebarFooter,
+  sidebarSections,
+} from "../components/layout/MenuConfig";
 
 function MainLayout({ isSidebarCollapsed, setIsSidebarCollapsed }) {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
@@ -20,6 +24,8 @@ function MainLayout({ isSidebarCollapsed, setIsSidebarCollapsed }) {
           isCollapsed={isSidebarCollapsed}
           isMobile={isMobile}
           setSidebarCollapsed={setIsSidebarCollapsed}
+          sections={sidebarSections}
+          footerItem={sidebarFooter}
         />
         <main
           className={`flex-1 transition-all duration-300 ease-in-out ${
