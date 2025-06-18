@@ -1,4 +1,3 @@
-
 const CheckBox = ({
   label,
   name,
@@ -6,7 +5,7 @@ const CheckBox = ({
   checked,
   onChange,
   disabled = false,
-  className = '',
+  className = "",
   ...props
 }) => {
   return (
@@ -16,16 +15,19 @@ const CheckBox = ({
         id={`${name}-${value}`}
         name={name}
         value={value}
-        checked={checked} 
+        checked={checked}
         onChange={onChange}
         disabled={disabled}
         className={`h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded ${
-          disabled ? 'bg-gray-100 cursor-not-allowed' : ''
+          disabled ? "bg-gray-100 cursor-not-allowed" : ""
         }`}
         {...props}
       />
       {label && (
-        <label htmlFor={`${name}-${value}`} className="ml-2 block text-sm text-gray-900">
+        <label
+          htmlFor={`${name}-${value}`}
+          className="ml-2 block text-sm text-gray-900"
+        >
           {label}
         </label>
       )}
@@ -33,4 +35,4 @@ const CheckBox = ({
   );
 };
 
-export default CheckBox
+export default CheckBox;

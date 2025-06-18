@@ -50,20 +50,7 @@ export const sidebarSections = [
       {
         icon: faWpforms,
         label: "Form",
-        subItems: [
-          {
-            label: "Form Elements",
-            subItems: [
-              { label: "Input", loc: "/form-input" },
-              { label: "Textarea", loc: "/form-textarea" },
-              { label: "Select", loc: "/form-select" },
-              { label: "Checkbox", loc: "/form-checkbox" },
-              { label: "Radio", loc: "/form-radio" },
-              { label: "Switch", loc: "/form-switch" },
-            ],
-          },
-          { label: "Form Layout", loc: "/layout-form" },
-        ],
+        subItems: [{ label: "Form Layout", loc: "/layout-form" }],
       },
       {
         icon: faTable,
@@ -79,12 +66,12 @@ export const sidebarSections = [
         subItems: [
           { label: "Alerts", loc: "/alert" },
           { label: "Buttons", loc: "/btn" },
-          { label: "Buttons Group", badge: "soon", loc: "#" },
+          { label: "Buttons Group", loc: "#" },
           { label: "Cards", loc: "/cards" },
           { label: "Modals", loc: "#" },
           { label: "Dropdowns", loc: "#" },
           { label: "Notification", loc: "#" },
-          { label: "Popovers", badge: "soon", loc: "#" },
+          { label: "Popovers", loc: "#" },
           { label: "Tabs", loc: "#" },
         ],
       },

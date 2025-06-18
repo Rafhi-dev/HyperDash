@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Input from "../components/form/input";
+import Input from "../components/form/input/input";
 import Select from "../components/form/Select";
 import CheckBox from "../components/form/CheckBox";
 import Radio from "../components/form/Radio";
@@ -7,6 +7,7 @@ import Switch from "../components/ui/switch/Switch";
 import Alert from "../components/ui/alerts/Alert";
 import Btn from "../components/ui/button/ButtonX";
 import Card from "../components/ui/card/Cards";
+import PasswordInput from "../components/form/input/Password";
 
 const Ujicoba = () => {
   //seting select
@@ -77,11 +78,11 @@ const Ujicoba = () => {
         <div className="w-full bg-white rounded-lg shadow-md p-4">
           <p>Konten ke 6</p>
 
-          <Input
-            label={"Username"}
-            value={country}
-            name={"input"}
-            placeholder={"input 1"}
+          <Input label={"Username"} placeholder={country} name={"input"} />
+          <PasswordInput
+            label="Password"
+            name="password"
+            placeholder="Masukkan password Anda"
           />
 
           <Select
