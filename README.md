@@ -34,17 +34,6 @@ npm run build
 
 ---
 
-## Struktur Proyek
-
-```
-src/
-├── assets/        → Gambar, ikon, dll
-├── components/    → Navbar, Sidebar, dll
-├── pages/         → Halaman dashboard
-├── App.jsx        → Komponen utama
-└── main.jsx       → Entry point aplikasi
-```
-
 ---
 
 ## Tech yang Digunakan
