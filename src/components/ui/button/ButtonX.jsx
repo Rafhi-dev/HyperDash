@@ -33,7 +33,7 @@ const Btn = ({
                   : danger
                   ? "text-red-600 border border-red-500 hover:bg-red-500 hover:text-white"
                   : customColor ||
-                    "text-sky-600 border border-sky-500 hover:bg-sky-500 hover:text-white"
+                    "text-black border border-black hover:bg-black hover:text-white"
               }`
             : `${
                 primary
@@ -46,7 +46,7 @@ const Btn = ({
                   ? "bg-yellow-500 hover:bg-yellow-600 text-white "
                   : danger
                   ? "bg-red-500 hover:bg-red-600 text-white "
-                  : customColor || "bg-sky-500 hover:bg-sky-600 text-white "
+                  : customColor || "bg-black hover:bg-gray-900 text-white "
               }`
         } transition-transform transform hover:scale-105 ${className}`}
     >

@@ -1,26 +1,7 @@
-import { useState, useEffect } from "react";
-import HyRoute from "./Routes/HyRoute";
+import MainRoute from "./Routes/MainRoute";
 
 function App() {
-  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
-
-  useEffect(() => {
-    const storedSidebarState = localStorage.getItem("sidebarCollapsed");
-    if (storedSidebarState !== null) {
-      setIsSidebarCollapsed(JSON.parse(storedSidebarState));
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("sidebarCollapsed", isSidebarCollapsed);
-  }, [isSidebarCollapsed]);
-
-  return (
-    <HyRoute
-      getCollapased={isSidebarCollapsed}
-      getSetCollapsed={setIsSidebarCollapsed}
-    />
-  );
+  return <MainRoute />;
 }
 
 export default App;

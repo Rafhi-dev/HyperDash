@@ -1,34 +1,6 @@
-.sidebar-collapsed .sidebar-text,
-.sidebar-collapsed #sidebar-title {
-  display: none;
-  transition: display 0.5s ease;
-}
-.sidebar-collapsed .menu-item {
-  justify-content: center;
-  padding-left: 0;
-  padding-right: 0;
-}
-/* Smooth transitions */
-#sidebar {
-  transition: all 0.5s ease;
-}
-.sidebar-hidden {
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-.sidebar-visible {
-  opacity: 1;
-  visibility: visible;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-main {
-  transition: margin-left 0.5s ease;
-}
-
 /* Mengatur lebar scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 4px;
 }
 
 /* Mengatur warna latar belakang track */
@@ -44,7 +16,7 @@ main {
 
 /* Mengubah warna thumb saat di-hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #464646;
 }
 
 @import "tailwindcss";

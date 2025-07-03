@@ -95,9 +95,9 @@ const TableView = () => {
 
   return (
     <div className="m-4 flex flex-col gap-4">
-      <Card title={"Basic table"}>
+      <div className="flex-1">
         <ReusableTable columns={columnsConfig} data={sampleUsers} />
-      </Card>
+      </div>
       <Card title={"Usage"}>
         <p>usage</p>
       </Card>

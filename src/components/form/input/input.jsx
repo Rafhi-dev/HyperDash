@@ -1,5 +1,3 @@
-import React from "react";
-
 const Input = ({
   type = "text",
   label,
@@ -9,12 +7,13 @@ const Input = ({
   value,
   onChange,
   error,
+  w = "w-full",
   disabled = false,
   className = "",
   ...props
 }) => {
   return (
-    <div className={`mb-4 ${className}`}>
+    <div className={`my-2`}>
       {label && (
         <label
           htmlFor={name}
@@ -31,9 +30,11 @@ const Input = ({
         value={value}
         onChange={onChange}
         disabled={disabled}
-        className={`w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 ${
+        className={`${w} px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 ${
           error ? "border-red-500" : "border-gray-300"
-        } ${disabled ? "bg-gray-100 cursor-not-allowed" : "bg-white"}`}
+        } ${
+          disabled ? "bg-gray-100 cursor-not-allowed" : "bg-white"
+        } ${className}`}
         {...props}
       />
       {error && <p className="mt-1 text-sm text-red-600">{error}</p>}

@@ -1,6 +1,7 @@
 import {
   faGithub,
   faUikit,
+  faUnity,
   faWpforms,
 } from "@fortawesome/free-brands-svg-icons";
 import {
@@ -12,14 +13,14 @@ import {
 
 export const sidebarSections = [
   {
-    title: "Menu",
+    title: "Page & Layout",
     items: [
       {
         icon: faGauge,
         label: "Dashboard",
         subItems: [
           { label: "Dashboard 1", loc: "/" },
-          { label: "Ujicoba", loc: "/ujicoba" },
+          { label: "Ujicoba", loc: "ujicoba" },
         ],
       },
       {
@@ -42,38 +43,48 @@ export const sidebarSections = [
         icon: faChartLine,
         label: "Chart",
         subItems: [
-          { label: "Line Chart", loc: "/line" },
-          { label: "Bar Chart", loc: "/bar-chart" },
-          { label: "Pie Chart", loc: "/pie-chart" },
+          {
+            label: "Chart.js",
+            subItems: [
+              { label: "Line Chart", loc: "line" },
+              { label: "Bar Chart", loc: "bar-chart" },
+              { label: "Pie Chart", loc: "pie-chart" },
+            ],
+          },
+          { label: "ApexChart", badge: "soon" },
         ],
       },
       {
         icon: faWpforms,
         label: "Form",
-        subItems: [{ label: "Form Layout", loc: "/layout-form" }],
+        subItems: [{ label: "Form Layout", loc: "layout-form" }],
       },
       {
         icon: faTable,
         label: "Tables",
         subItems: [
-          { label: "Basic Tables", loc: "/basic-tables" },
-          { label: "Data Tables", loc: "/data-tables" },
+          { label: "Basic Tables", loc: "basic-tables" },
+          { label: "Data Tables", loc: "data-tables" },
         ],
       },
       {
         icon: faUikit,
         label: "UI Elements",
         subItems: [
-          { label: "Alerts", loc: "/alert" },
-          { label: "Buttons", loc: "/btn" },
-          { label: "Buttons Group", loc: "#" },
-          { label: "Cards", loc: "/cards" },
-          { label: "Modals", loc: "#" },
+          { label: "Alerts", loc: "alert" },
+          { label: "Buttons", loc: "btn" },
+          { label: "Cards", loc: "cards" },
+          { label: "Modals", loc: "modals" },
+          { label: "Accordion", loc: "accordion" },
           { label: "Dropdowns", loc: "#" },
-          { label: "Notification", loc: "#" },
-          { label: "Popovers", loc: "#" },
-          { label: "Tabs", loc: "#" },
+          { label: "Tabs", loc: "tab" },
+          { label: "Switch", loc: "#" },
         ],
+      },
+      {
+        icon: faUnity,
+        label: "Animation",
+        subItems: [{ label: "Particle", loc: "#" }],
       },
       // ... item lainnya
     ],

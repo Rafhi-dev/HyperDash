@@ -3,7 +3,7 @@ import PieChartV from "../components/charts/Pie/PieChartV";
 import LineChartV from "../components/charts/Line/LineChartV";
 
 export const chartRoutes = [
-  { path: "/line", element: <LineChartV /> },
-  { path: "/bar-chart", element: <BarChartV /> },
-  { path: "/pie-chart", element: <PieChartV /> },
+  { path: "line", element: <LineChartV /> },
+  { path: "bar-chart", element: <BarChartV /> },
+  { path: "pie-chart", element: <PieChartV /> },
 ];

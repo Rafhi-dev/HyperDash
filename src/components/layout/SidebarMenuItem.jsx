@@ -6,20 +6,19 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-function SidebarMenuItem({ 
-  icon, 
-  label, 
-  badge, 
-  loc, 
-  subItems, 
-  setIsSidebarCollapsed, 
+function SidebarMenuItem({
+  icon,
+  label,
+  badge,
+  loc,
+  subItems,
+  setIsSidebarCollapsed,
   isSidebarCollapsed,
   isActive = false,
-  depth = 0 
+  depth = 0,
 }) {
   const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
 
-  // Tutup submenu jika sidebar collapse
   useEffect(() => {
     if (isSidebarCollapsed) {
       setIsSubmenuOpen(false);
@@ -27,75 +26,101 @@ function SidebarMenuItem({
   }, [isSidebarCollapsed]);
 
   const handleItemClick = (e) => {
-    if (subItems && subItems.length > 0) {
-      e.preventDefault();
-      setIsSubmenuOpen(!isSubmenuOpen);
-      setIsSidebarCollapsed(false); // Expand sidebar jika submenu diklik
+    e.preventDefault();
+    setIsSubmenuOpen(!isSubmenuOpen);
+    if (subItems?.length > 0) {
+      setIsSidebarCollapsed(false);
     }
   };
 
-  // Base classes untuk menu item
+  // ===========================
+  // Utility Classes
+  // ===========================
+
   const baseClasses = `
-    group flex items-center w-full text-left rounded-lg transition-all duration-200 ease-in-out
-    focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
+    group flex items-center w-full text-left rounded-lg
+    transition-all duration-300
   `;
 
-  // Classes untuk padding berdasarkan depth
   const paddingClasses = depth === 0 ? "p-2" : "py-2 px-3";
 
-  // Classes untuk warna dan hover state
-  const colorClasses = isActive 
-    ? "bg-blue-500 text-white shadow-md" 
-    : depth > 0 
-      ? "text-gray-600 hover:bg-gray-200 hover:text-gray-900"
-      : "text-gray-700 hover:bg-blue-200 hover:text-blue-700 hover:shadow-sm";
+  const colorClasses = isActive
+    ? "bg-blue-500 text-white shadow-md"
+    : depth > 0
+    ? "text-gray-600 hover:bg-gray-200 hover:text-gray-900"
+    : "text-gray-700 hover:bg-blue-200 hover:text-blue-700 hover:shadow-sm";
 
-  // Classes untuk submenu container
   const submenuClasses = `
-    mt-2 pt-1 space-y-1 overflow-hidden transition-all duration-300 ease-in-out
-    ${depth === 0 ? "ml-4 pl-4" : "ml-2 pl-2"}
-    ${isSubmenuOpen 
-      ? "max-h-full opacity-100 visible" 
-      : "max-h-0 opacity-0 invisible"
-    }
+    mt-2 pt-1 space-y-1 overflow-hidden transform
+    ${depth === 0 ? "ml-4 pl-4 border-l-2 border-gray-200" : "ml-2 pl-2"}
+    ${
+      isSubmenuOpen
+        ? "max-h-[500px] opacity-100 visible translate-y-0 scale-y-100 duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1)]"
+        : "max-h-0 opacity-0 invisible -translate-y-1 scale-y-95 duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1)]"
+    } 
+    transition-all origin-top
   `;
+
+  // ===========================
+  // Content Renderer
+  // ===========================
 
   const renderContent = () => (
     <>
-      <div className={`flex items-center min-w-0 flex-1 ${isSidebarCollapsed ? "justify-center" : "justify-start"}`}>
-        <FontAwesomeIcon 
-          icon={icon} 
-          className={`w-5 h-5 flex-shrink-0 ${isActive ? "text-white" : "text-gray-500 group-hover:text-blue-600"}`}
+      <div
+        className={`flex items-center min-w-0 flex-1 ${
+          isSidebarCollapsed ? "justify-center" : "justify-start"
+        }`}
+      >
+        <FontAwesomeIcon
+          icon={icon}
+          className={`w-5 h-5 flex-shrink-0 ${
+            isActive ? "text-white" : "text-gray-500 group-hover:text-blue-600"
+          }`}
         />
-        <span className={`sidebar-text ml-3 font-medium truncate ${isSidebarCollapsed ? "hidden" : "block"}`}>
+
+        <span
+          className={`ml-3 font-semibold text-gray-600 truncate ${
+            isSidebarCollapsed ? "hidden" : "block"
+          } ${
+            isActive ? "text-white" : "text-gray-500 group-hover:text-blue-600"
+          }`}
+        >
           {label}
         </span>
       </div>
-      
+
       {badge && !isSidebarCollapsed && (
-        <span className={`
-          ml-2 px-2 py-1 text-xs font-semibold rounded-full flex-shrink-0
-          ${isActive 
-            ? "bg-blue-500 text-white" 
-            : "bg-blue-100 text-blue-800 group-hover:bg-blue-200"
-          }
-        `}>
+        <span
+          className={`
+            ml-2 px-2 py-1 text-xs font-semibold rounded-full flex-shrink-0
+            ${
+              isActive
+                ? "bg-blue-500 text-white"
+                : "bg-blue-100 text-blue-800 group-hover:bg-blue-200"
+            }
+          `}
+        >
           {badge}
         </span>
       )}
-      
-      {subItems && subItems.length > 0 && !isSidebarCollapsed && (
+
+      {subItems?.length > 0 && !isSidebarCollapsed && (
         <FontAwesomeIcon
-          icon={isSubmenuOpen ? faChevronDown : faChevronRight}
+          icon={faChevronRight}
           className={`
-            w-4 h-4 ml-2 flex-shrink-0 transition-transform duration-200
-            ${isActive ? "text-white" : "text-gray-400 group-hover:text-blue-600"}
-            ${isSubmenuOpen ? "rotate-0" : "rotate-0"}
-          `}
+         w-4 h-4 ml-2 flex-shrink-0 transform transition-transform duration-300
+         ${isSubmenuOpen ? "rotate-90" : ""}
+         ${isActive ? "text-white" : "text-gray-400 group-hover:text-blue-600"}
+       `}
         />
       )}
     </>
   );
+
+  // ===========================
+  // Main JSX
+  // ===========================
 
   return (
     <li className="relative">
@@ -107,7 +132,7 @@ function SidebarMenuItem({
         >
           {renderContent()}
         </Link>
-      ) : subItems && subItems.length > 0 ? (
+      ) : subItems?.length > 0 ? (
         <button
           type="button"
           onClick={handleItemClick}
@@ -119,16 +144,15 @@ function SidebarMenuItem({
           {renderContent()}
         </button>
       ) : (
-        <div className={`${baseClasses} ${paddingClasses} ${colorClasses} cursor-default`}>
+        <div
+          className={`${baseClasses} ${paddingClasses} ${colorClasses} cursor-default`}
+        >
           {renderContent()}
         </div>
       )}
 
-      {subItems && subItems.length > 0 && !isSidebarCollapsed && (
+      {subItems?.length > 0 && !isSidebarCollapsed && (
         <div className="relative">
-          {/* Garis vertikal untuk indikator submenu */}
-          <div className={`absolute left-6 top-0 bottom-0 w-px bg-blue-300 ${isSubmenuOpen ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}></div>
-          
           <ul
             className={submenuClasses}
             aria-hidden={!isSubmenuOpen}
@@ -137,14 +161,9 @@ function SidebarMenuItem({
             {subItems.map((subItem, index) => (
               <SidebarMenuItem
                 key={subItem.loc || subItem.label || index}
-                icon={subItem.icon}
-                label={subItem.label}
-                loc={subItem.loc}
-                badge={subItem.badge}
-                subItems={subItem.subItems}
+                {...subItem}
                 setIsSidebarCollapsed={setIsSidebarCollapsed}
                 isSidebarCollapsed={isSidebarCollapsed}
-                isActive={subItem.isActive}
                 depth={depth + 1}
               />
             ))}

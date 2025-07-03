@@ -55,7 +55,7 @@ function BtnView() {
           <Btn outline success value="Success" />
           <Btn outline warning value="Warning" />
           <Btn outline danger value="Danger" />
-          <Btn outline value="Default" />
+          <Btn outline value="Default" className="unavailable" />
         </div>
       </Card>
       <div className="flex-1">

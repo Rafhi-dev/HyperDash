@@ -13,9 +13,9 @@ const ReusableTable = ({
 
   return (
     <>
-      <div className="bg-white shadow-xl rounded-xl overflow-x-auto">
+      <div className="bg-white shadow-lg rounded-md overflow-x-auto">
         <table className="min-w-full divide-y divide-gray-200 bg-white text-sm text-left text-gray-700">
-          <thead className="bg-blue-400 text-xs uppercase text-white">
+          <thead className="bg-blue-500 text-xs uppercase text-white">
             <tr>
               {columns.map((column, index) => (
                 <th key={index} className="px-6 py-3">
