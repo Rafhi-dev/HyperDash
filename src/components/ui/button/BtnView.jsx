@@ -3,39 +3,6 @@ import Card from "../card/Cards";
 import Btn from "./ButtonX";
 
 function BtnView() {
-  const dataPenjualan = {
-    labels: [
-      "Januari",
-      "Februari",
-      "Maret",
-      "April",
-      "Mei",
-      "Juni",
-      "Juli",
-      "Agustus",
-      "September",
-      "Oktober",
-      "November",
-      "Desember",
-    ],
-    datasets: [
-      {
-        label: "Penjualan Produk A",
-        data: [65, 59, 80, 81, 56, 55, 40, 65, 76, 23, 88, 43],
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
-        borderColor: "rgb(255, 99, 132)",
-        borderWidth: 1,
-      },
-      {
-        label: "Penjualan Produk B",
-        data: [28, 48, 40, 19, 86, 27, 80, 59, 80, 81, 56, 55],
-        backgroundColor: "oklch(70.7% 0.165 254.624)",
-        borderColor: "oklch(62.3% 0.214 259.815)",
-        borderWidth: 1,
-      },
-    ],
-  };
-
   return (
     <div className="flex flex-col gap-4 p-4">
       <Card w="full" title={"Button Solid"}>
@@ -71,11 +38,6 @@ function BtnView() {
             singkat di dalam card. Anda bisa menulis beberapa kalimat di sini
             untuk menjelaskan isi dari card tersebut.
           </p>
-        </Card>
-      </div>
-      <div className="flex-1">
-        <Card w="full">
-          <BarChart H chartData={dataPenjualan} title={"Sample Chart"} />
         </Card>
       </div>
     </div>
