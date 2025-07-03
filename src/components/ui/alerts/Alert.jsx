@@ -38,7 +38,7 @@ const Alert = ({
           : danger
           ? "bg-red-400/10 border-red-400"
           : "bg-blue-400/10 border-blue-400"
-      } rounded-lg border  p-4 flex flex-row ${className}`}
+      } rounded-lg border shadow-lg p-4 flex flex-row ${className}`}
     >
       <div className="flex">
         <FontAwesomeIcon

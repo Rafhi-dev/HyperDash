@@ -2,10 +2,7 @@ import { Outlet } from "react-router-dom";
 import Navbar from "../components/layout/Navbar";
 import Sidebar from "../components/layout/Sidebar";
 import { useMediaQuery } from "react-responsive";
-import {
-  sidebarFooter,
-  sidebarSections,
-} from "../components/layout/MenuConfig";
+import { sidebarFooter, sidebarSections } from "./MenuConfig";
 import { useEffect, useState } from "react";
 
 function MainLayout() {

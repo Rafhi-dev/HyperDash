@@ -13,7 +13,6 @@ import {
 
 export const sidebarSections = [
   {
-    title: "Page & Layout",
     items: [
       {
         icon: faGauge,
