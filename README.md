@@ -1,7 +1,7 @@
 
-# ⚛️ HyperDash
+# Moonlight
 
-**HyperDash** adalah dashboard admin berbasis React.js + Tailwind CSS, dirancang dengan antarmuka responsif. Cocok untuk digunakan sebagai base project admin panel.
+**Moonlight admin** adalah dashboard admin berbasis React.js + Tailwind CSS, dirancang dengan antarmuka responsif. Cocok untuk digunakan sebagai base project admin panel.
 
 ---
 

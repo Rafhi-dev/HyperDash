@@ -124,7 +124,7 @@ const Ujicoba = () => {
         </div>
       </div>
       <footer className="text-center text-sm text-gray-500 py-4">
-        &copy; {new Date().getFullYear()} HyperDash.
+        &copy; {new Date().getFullYear()} Make With Pride.
       </footer>
     </div>
   );
