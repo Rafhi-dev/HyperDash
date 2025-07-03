@@ -9,8 +9,8 @@
 
 ### 1. Clone dan Masuk ke Folder
 ```bash
-git clone https://github.com/Rafhi-dev/HyperDash.git
-cd HyperDash
+git clone https://github.com/Rafhi-dev/Moonlight.git
+cd Moonlight
 ````
 
 ### 2. Install Semua Dependensi
