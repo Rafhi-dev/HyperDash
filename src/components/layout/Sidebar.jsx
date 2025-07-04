@@ -25,7 +25,7 @@ function Sidebar({
       id="sidebar"
       aria-label="Sidebar Navigation"
       className={`
-    flex flex-col bg-white shadow-md fixed top-14 left-0 bottom-0 z-10
+    flex flex-col bg-white border-r border-gray-300 shadow-md fixed top-14 left-0 bottom-0 z-10
     transition-all duration-600 ease-in-out
     ${isMobile ? "overflow-y-auto" : "overflow-hidden"}
     ${

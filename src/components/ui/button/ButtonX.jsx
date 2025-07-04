@@ -18,7 +18,7 @@ const Btn = ({
       type={`${type}`}
       onSubmit={onSubmit}
       onClick={onClick}
-      className={`px-4 py-2 my-2 font-semibold rounded-lg shadow-md
+      className={`px-4 py-2 font-semibold rounded-lg shadow-md
         ${
           outline
             ? `bg-tranparent ${

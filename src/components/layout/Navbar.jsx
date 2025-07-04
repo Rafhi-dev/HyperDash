@@ -16,7 +16,7 @@ const Navbar = ({ isSidebarCollapsed, setIsSidebarCollapsed }) => {
   };
 
   return (
-    <nav className="bg-white shadow-md text-black px-2 fixed w-full top-0 z-40 h-14 flex items-center">
+    <nav className="bg-white border-b border-gray-300 shadow-sm text-black px-2 fixed w-full top-0 z-40 h-14 flex items-center">
       <div className="flex items-center w-full">
         <div className="flex items-center space-x-4">
           <button

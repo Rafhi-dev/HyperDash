@@ -24,7 +24,7 @@ const Dropdown = ({ toggleButton, children, align = "right" }) => {
       </div>
       {open && (
         <div
-          className={`absolute ${align}-0 mt-2 bg-white rounded-md shadow-lg z-60 border border-gray-100`}
+          className={`absolute ${align}-0 bg-white rounded-md shadow-lg z-60 border border-gray-300`}
         >
           {children}
         </div>

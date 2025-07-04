@@ -79,7 +79,7 @@ const Alert = ({
       </div>
       <button className="ml-2 text-right cursor-pointer" onClick={closeAlert}>
         <FontAwesomeIcon
-          className="text-gray-400 hover:text-gray-700"
+          className="text-gray-400 hover:text-gray-500"
           icon={faXmark}
           size="md"
         />

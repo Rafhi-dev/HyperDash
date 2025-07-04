@@ -27,7 +27,7 @@ function MainLayout() {
   const navbarHeightOffsetClass = "pt-14";
 
   return (
-    <div className="bg-gray-100 min-h-screen font-sans antialiased">
+    <div className="bg-slate-100 min-h-screen font-sans antialiased">
       <Navbar
         isSidebarCollapsed={isSidebarCollapsed}
         setIsSidebarCollapsed={setIsSidebarCollapsed}
