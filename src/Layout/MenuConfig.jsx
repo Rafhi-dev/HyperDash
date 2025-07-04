@@ -17,10 +17,7 @@ export const sidebarSections = [
       {
         icon: faGauge,
         label: "Dashboard",
-        subItems: [
-          { label: "Dashboard 1", loc: "/" },
-          { label: "Ujicoba", loc: "ujicoba" },
-        ],
+        subItems: [{ label: "Dashboard 1", loc: "/" }],
       },
       {
         icon: faFile,
@@ -56,7 +53,7 @@ export const sidebarSections = [
       {
         icon: faWpforms,
         label: "Form",
-        subItems: [{ label: "Form Layout", loc: "layout-form" }],
+        subItems: [{ label: "Form Element", loc: "layout-form" }],
       },
       {
         icon: faTable,
