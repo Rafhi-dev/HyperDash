@@ -1,3 +1,5 @@
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState, useRef, useEffect, useCallback } from "react";
 
 const Dropdown = ({ toggleButton, children, align = "right" }) => {
@@ -17,10 +19,26 @@ const Dropdown = ({ toggleButton, children, align = "right" }) => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [open]);
 
+  const triggerButton = (
+    <>
+      <button className="py-2 px-4 bg-blue-500 text-white hover:bg-blue-600 rounded-lg">
+        Submit
+        <span className={`ml-2`}>
+          <FontAwesomeIcon
+            className={`transform transition-transform duration-300 ${
+              open ? "rotate-180" : ""
+            }`}
+            icon={faChevronDown}
+          />
+        </span>
+      </button>
+    </>
+  );
+
   return (
     <div className="relative" ref={dropdownRef}>
-      <div onClick={toggle} className="cursor-pointer">
-        {toggleButton}
+      <div onClick={toggle} className="flex cursor-pointer">
+        {toggleButton ? toggleButton : triggerButton}
       </div>
       {open && (
         <div
