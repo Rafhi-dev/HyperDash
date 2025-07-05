@@ -30,6 +30,7 @@ const LineChartV = () => {
         data: [65, 59, 80, 81, 56, 55, 40],
         borderColor: "rgb(255, 99, 132)",
         backgroundColor: "rgba(255, 99, 132, 0.5)",
+        tension: 0.3,
         fill: true,
       },
       {
@@ -37,6 +38,7 @@ const LineChartV = () => {
         data: [28, 48, 40, 19, 86, 27, 90],
         borderColor: "rgb(53, 162, 235)",
         backgroundColor: "rgba(53, 162, 235, 0.5)",
+        tension: 0.3,
         fill: true,
       },
     ],
@@ -51,7 +53,10 @@ const LineChartV = () => {
         </div>
         <div className="flex-1 min-w-0">
           <Card title={"Line Filled"}>
-            <LineChart chartData={dataPenjualanLine_2} title={"Example"} />
+            <LineChart
+              chartData={dataPenjualanLine_2}
+              title={"Example with fills and tension"}
+            />
           </Card>
         </div>
       </div>

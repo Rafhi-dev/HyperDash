@@ -40,7 +40,7 @@ const Navbar = ({ isSidebarCollapsed, setIsSidebarCollapsed }) => {
             <Input
               placeholder={"Search.."}
               w="w-70"
-              className="hidden md:inline"
+              className="hidden md:inline md:border md:border-gray-400"
             />
           </div>
 
