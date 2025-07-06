@@ -72,7 +72,7 @@ export const sidebarSections = [
           { label: "Cards", loc: "cards" },
           { label: "Modals", loc: "modals" },
           { label: "Accordion", loc: "accordion" },
-          { label: "Dropdowns", loc: "#" },
+          { label: "Dropdowns", loc: "dropdown" },
           { label: "Tabs", loc: "tab" },
           { label: "Switch", loc: "#" },
         ],
