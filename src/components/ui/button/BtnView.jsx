@@ -25,21 +25,6 @@ function BtnView() {
           <Btn outline value="Default" className="unavailable" />
         </div>
       </Card>
-      <div className="flex-1">
-        <Card w="full" title={"Docs"}>
-          <p className="text-gray-700 text-base">
-            Ini adalah konten atau deskripsi singkat di dalam card. Anda bisa
-            menulis beberapa kalimat di sini untuk menjelaskan isi dari card
-            tersebut. Ini adalah konten atau deskripsi singkat di dalam card.
-            Anda bisa menulis beberapa kalimat di sini untuk menjelaskan isi
-            dari card tersebut. Ini adalah konten atau deskripsi singkat di
-            dalam card. Anda bisa menulis beberapa kalimat di sini untuk
-            menjelaskan isi dari card tersebut. Ini adalah konten atau deskripsi
-            singkat di dalam card. Anda bisa menulis beberapa kalimat di sini
-            untuk menjelaskan isi dari card tersebut.
-          </p>
-        </Card>
-      </div>
     </div>
   );
 }

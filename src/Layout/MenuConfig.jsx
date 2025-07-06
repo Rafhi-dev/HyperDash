@@ -77,11 +77,7 @@ export const sidebarSections = [
           { label: "Switch", loc: "#" },
         ],
       },
-      {
-        icon: faUnity,
-        label: "Animation",
-        subItems: [{ label: "Particle", loc: "#" }],
-      },
+
       // ... item lainnya
     ],
   },

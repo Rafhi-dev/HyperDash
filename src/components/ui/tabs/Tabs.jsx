@@ -1,3 +1,5 @@
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 
 const Tabs = ({ tabs }) => {
@@ -16,7 +18,7 @@ const Tabs = ({ tabs }) => {
                 : "text-gray-500 hover:text-blue-500"
             }`}
           >
-            {tab.label}
+            <FontAwesomeIcon icon={tab.icon} /> {tab.label}
           </button>
         ))}
       </div>
