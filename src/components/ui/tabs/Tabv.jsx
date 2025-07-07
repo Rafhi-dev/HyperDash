@@ -1,5 +1,5 @@
-import { faUser, faUserAstronaut } from "@fortawesome/free-solid-svg-icons";
-import Tabs from "./tabs";
+import { faUserAstronaut } from "@fortawesome/free-solid-svg-icons";
+import Tabs from "./Tabs";
 
 function Tabv() {
   const content = [
