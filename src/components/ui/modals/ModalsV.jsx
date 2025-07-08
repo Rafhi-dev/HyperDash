@@ -20,18 +20,16 @@ const ModalsV = () => {
         </button>
 
         {/* Panggil komponen Modal di sini */}
-        <Modal isOpen={isModalOpen} onClose={closeModal} title="Sample Modals">
+        <Modal
+          alert
+          isOpen={isModalOpen}
+          onClose={closeModal}
+          title="Sample Modals"
+        >
           {/* Konten di dalam sini bisa berupa apapun: teks, form, gambar, dll. */}
-          <p className="text-sm text-gray-600">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum
+          <p className="text-sm text-center text-gray-600">
+            Lorem ipsum dolor sit amet consectetur. Feugiat ipsum libero tempor
+            felis risus nisi non. Quisque eu ut tempor curabitur.
           </p>
 
           <div className="mt-6 flex justify-end space-x-3">
@@ -52,20 +50,6 @@ const ModalsV = () => {
             </button>
           </div>
         </Modal>
-      </div>
-      <div className="flex-1 bg-white m-4 p-4 rounded-lg shadow-xl">
-        <div className="text-xl font-bold mb-2">Usage</div>
-        <p className="text-sm text-gray-600">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum
-        </p>
       </div>
     </>
   );
