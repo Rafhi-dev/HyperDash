@@ -48,7 +48,7 @@ const Btn = ({
                   ? "bg-red-500 hover:bg-red-600 text-white "
                   : customColor || "bg-black hover:bg-gray-900 text-white "
               }`
-        } transition-transform transform hover:scale-105 ${className}`}
+        } transition-transform transform hover:scale-102 ${className}`}
     >
       {children ? children : value}
     </button>
