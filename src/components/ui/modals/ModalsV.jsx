@@ -81,7 +81,7 @@ const ModalsV = () => {
           }
         >
           {/* Konten di dalam sini bisa berupa apapun: teks, form, gambar, dll. */}
-          <p className="text-sm text-center text-gray-600">
+          <p className="text-sm text-gray-600">
             Lorem ipsum dolor sit amet consectetur. Feugiat ipsum libero tempor
             felis risus nisi non. Quisque eu ut tempor curabitur.
           </p>

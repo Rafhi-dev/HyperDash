@@ -22,7 +22,7 @@ function AlertModals({
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key === "escape") {
-        onClose();
+        AlertOnClose();
       }
     };
 
@@ -34,7 +34,7 @@ function AlertModals({
 
   const clickOutside = (e) => {
     if (e.target === e.currentTarget) {
-      onClose();
+      AlertOnClose();
     }
   };
 
