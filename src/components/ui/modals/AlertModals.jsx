@@ -128,20 +128,26 @@ function AlertModals({
               children
             )}
             <div className="flex justify-center">
-              <button
-                onClick={onClick}
-                className={`${
-                  alert && alert === "success"
-                    ? "bg-green-500 hover:bg-green-600"
-                    : alert === "warning"
-                    ? "bg-orange-500 hover:bg-orange-600"
-                    : alert === "danger"
-                    ? "bg-red-500 hover:bg-red-600"
-                    : "bg-blue-500 hover:bg-blue-600"
-                } rounded-lg hover:scale-101 px-4 py-2 font-semibold text-white`}
-              >
-                {btnName ? btnName : "Okay"}
-              </button>
+              {alertbtn ? (
+                alertbtn
+              ) : (
+                <>
+                  <button
+                    onClick={onClick}
+                    className={`${
+                      alert && alert === "success"
+                        ? "bg-green-500 hover:bg-green-600"
+                        : alert === "warning"
+                        ? "bg-orange-500 hover:bg-orange-600"
+                        : alert === "danger"
+                        ? "bg-red-500 hover:bg-red-600"
+                        : "bg-blue-500 hover:bg-blue-600"
+                    } rounded-lg hover:scale-101 px-4 py-2 font-semibold text-white`}
+                  >
+                    {btnName ? btnName : "Okay"}
+                  </button>
+                </>
+              )}
             </div>
           </div>
         </div>
