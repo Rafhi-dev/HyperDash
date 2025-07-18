@@ -13,7 +13,7 @@ function AlertModals({
   alert,
   titleAlert,
   alertMsg,
-  alertbtn,
+  customFooter,
   btnName,
   onClick,
   children,
@@ -119,6 +119,7 @@ function AlertModals({
               ? "Danger Alert !!"
               : "System Alert"}
           </div>
+          {/*alert modal - body*/}
           <div className="mt-4">
             {alertMsg ? (
               <p className="text-sm text-center text-gray-600 mb-6">
@@ -127,25 +128,28 @@ function AlertModals({
             ) : (
               children
             )}
-            <div className="flex justify-center">
-              {alertbtn ? (
-                alertbtn
+            {/*Footer */}
+            <div className="mt-4">
+              {customFooter ? (
+                <div className="flex mt-auto">{customFooter}</div>
               ) : (
                 <>
-                  <button
-                    onClick={onClick}
-                    className={`${
-                      alert && alert === "success"
-                        ? "bg-green-500 hover:bg-green-600"
-                        : alert === "warning"
-                        ? "bg-orange-500 hover:bg-orange-600"
-                        : alert === "danger"
-                        ? "bg-red-500 hover:bg-red-600"
-                        : "bg-blue-500 hover:bg-blue-600"
-                    } rounded-lg hover:scale-101 px-4 py-2 font-semibold text-white`}
-                  >
-                    {btnName ? btnName : "Okay"}
-                  </button>
+                  <div className="flex mt-auto justify-center">
+                    <button
+                      onClick={onClick}
+                      className={`${
+                        alert && alert === "success"
+                          ? "bg-green-500 hover:bg-green-600"
+                          : alert === "warning"
+                          ? "bg-orange-500 hover:bg-orange-600"
+                          : alert === "danger"
+                          ? "bg-red-500 hover:bg-red-600"
+                          : "bg-blue-500 hover:bg-blue-600"
+                      } rounded-lg hover:scale-101 px-4 py-2 font-semibold text-white`}
+                    >
+                      {btnName ? btnName : "Okay"}
+                    </button>
+                  </div>
                 </>
               )}
             </div>

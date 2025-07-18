@@ -1,5 +1,4 @@
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { X } from "lucide-react";
 import { useEffect } from "react";
 
 const Modal = ({
@@ -7,6 +6,7 @@ const Modal = ({
   onClose,
   title,
   children,
+  modalBody,
   fullscreen,
   modalFooter,
 }) => {
@@ -60,13 +60,15 @@ const Modal = ({
             aria-label="Tutup modal"
           >
             {/* Ikon 'X' */}
-            <FontAwesomeIcon icon={faXmark} />
+            <X />
           </button>
         </div>
 
         {/* Konten Modal */}
-        <div className="mt-4">{children}</div>
-        <div className="mt-auto flex justify-end">{modalFooter}</div>
+        <div className="mt-4">{modalBody ? modalBody : children}</div>
+        <div className="mt-auto flex justify-end">
+          {modalFooter ? modalFooter : ""}
+        </div>
       </div>
     </div>
   );

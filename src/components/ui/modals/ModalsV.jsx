@@ -3,7 +3,6 @@ import Modal from "./Modals";
 import AlertModals from "./AlertModals";
 
 const ModalsV = () => {
-  // State untuk mengontrol visibilitas modal
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [AlertOpen, setAlertOpen] = useState(false);
   const [modalFullscreen, setModalFullscreen] = useState(false);
@@ -16,6 +15,7 @@ const ModalsV = () => {
 
   const openModalFull = () => setModalFullscreen(true);
   const closeModalfull = () => setModalFullscreen(false);
+
   return (
     <>
       <div className="p-6 space-y-6">
