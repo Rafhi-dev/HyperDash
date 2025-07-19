@@ -1,6 +1,7 @@
 import FormView from "../components/form/FormView";
 import AccV from "../components/ui/accordion/AccV";
 import AlertView from "../components/ui/alerts/AlertView";
+import BreadcrumbV from "../components/ui/breadcrumb/BreadcrumbV";
 import BtnView from "../components/ui/button/BtnView";
 import CardView from "../components/ui/card/CardView";
 import DropdownView from "../components/ui/dropdown/Dropdown.view";
@@ -14,4 +15,5 @@ export const compUi = [
   { path: "tab", element: <Tabv /> },
   { path: "accordion", element: <AccV /> },
   { path: "dropdown", element: <DropdownView /> },
+  { path: "breadcrumb", element: <BreadcrumbV /> },
 ];

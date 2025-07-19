@@ -1,5 +1,7 @@
 import Accordion from "./Accordion";
 import Card from "../card/Cards";
+import Breadcrumb from "../breadcrumb/Breadcrumb";
+
 const AccV = () => {
   const items = [
     {
@@ -13,15 +15,19 @@ const AccV = () => {
     },
   ];
 
+  const breadcrumb = [
+    { label: "Home", url: "/" },
+    { label: "Component", url: "#" },
+    { label: "Accordion", url: "#" },
+  ];
+
   return (
     <div className="m-4 flex flex-col gap-4">
+      <Breadcrumb items={breadcrumb} />
       <div className="bg-white rounded-lg shadow-lg">
         <Card title={"Accordion"}>
           <Accordion items={items} />
         </Card>
-      </div>
-      <div className="bg-white rounded-lg shadow-lg">
-        <Card title={"Usage"}>hallo</Card>
       </div>
     </div>
   );

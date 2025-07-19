@@ -75,6 +75,7 @@ export const sidebarSections = [
           { label: "Dropdowns", loc: "dropdown" },
           { label: "Tabs", loc: "tab" },
           { label: "Switch", loc: "#" },
+          { label: "Breadcrumb", loc: "breadcrumb" },
         ],
       },
 
