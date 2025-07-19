@@ -1,4 +1,4 @@
-import { Icon } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
 const Breadcrumb = ({ items }) => {
@@ -7,12 +7,20 @@ const Breadcrumb = ({ items }) => {
       <ul className="list-none p-0 inline-flex">
         {items.map((item, index) => (
           <li key={index} className="flex items-center">
-            {index !== 0 && <span className="mx-2 text-gray-400">/</span>}
+            {index !== 0 && <div className="mx-2 text-gray-400">/</div>}
             {index === items.length - 1 ? (
-              <span className="text-gray-500 font-medium">{item.label}</span>
+              <div className="text-gray-500 font-medium ">
+                <span>
+                  <FontAwesomeIcon icon={item.icon} className="text-sm mr-1" />
+                </span>
+                {item.label}
+              </div>
             ) : (
               <Link to={item.url} className="hover:underline">
-                <Icon iconNode={item.Icon} /> {item.label}
+                <span>
+                  <FontAwesomeIcon icon={item.icon} className="text-sm mr-1" />
+                </span>
+                {item.label}
               </Link>
             )}
           </li>
