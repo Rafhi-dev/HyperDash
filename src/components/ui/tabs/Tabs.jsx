@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 
 const Tabs = ({ tabs }) => {
-  const [activeTab, setActiveTab] = useState(tabs[0].label);
+  const [activeTab, setActiveTab] = useState(tabs[0]?.label);
 
   return (
     <div>
@@ -17,7 +17,7 @@ const Tabs = ({ tabs }) => {
                 : "text-gray-500 hover:text-blue-500"
             }`}
           >
-            <FontAwesomeIcon icon={tab.icon} /> {tab.label}
+            {tab.icon ? <FontAwesomeIcon icon={tab.icon} /> : ""} {tab.label}
           </button>
         ))}
       </div>
