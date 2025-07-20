@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Modal from "./Modals";
 import AlertModals from "./AlertModals";
+import { faHome } from "@fortawesome/free-solid-svg-icons";
+import Breadcrumb from "../breadcrumb/Breadcrumb";
 
 const ModalsV = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -16,8 +18,14 @@ const ModalsV = () => {
   const openModalFull = () => setModalFullscreen(true);
   const closeModalfull = () => setModalFullscreen(false);
 
+  const breadcrumb = [
+    { label: "Home", url: "/", icon: faHome },
+    { label: "Component", url: "#" },
+    { label: "Modals" },
+  ];
   return (
     <>
+      <Breadcrumb items={breadcrumb} className={"m-6 mb-0"} />
       <div className="p-6 space-y-6">
         <div className="flex flex-col sm:flex-row gap-4">
           <div className="flex-1 p-4 bg-white rounded-lg shadow-md border border-gray-300">

@@ -22,7 +22,7 @@ const BreadcrumbV = () => {
   ];
   return (
     <>
-      <div className="m-4">
+      <div className="m-6">
         <div className="flex flex-col gap-4">
           <Breadcrumb items={breadcrumb} />
           <div className="flex-1 p-4 bg-white border border-gray-300 rounded-md shadow-md">
