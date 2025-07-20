@@ -4,10 +4,12 @@ import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCog,
+  faHome,
   faSignOutAlt,
   faUserCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import Breadcrumb from "../breadcrumb/Breadcrumb";
 
 function DropdownView() {
   const withIcon = [
@@ -21,9 +23,16 @@ function DropdownView() {
     { link: "#", value: "Example 2" },
     { link: "#", value: "Example 3" },
   ];
+
+  const breadCrumb = [
+    { label: "Home", url: "/", icon: faHome },
+    { label: "Component" },
+    { label: "Dropdown" },
+  ];
   return (
     <>
-      <div className="m-4 space-y-4 p-2">
+      <div className="m-6 space-y-4">
+        <Breadcrumb items={breadCrumb} />
         <div className="grid grid-cols md:grid-cols-3 gap-6 ">
           <Card className="h-100 border border-gray-300" title={"Dropdown"}>
             <Dropdown align="left" buttonName="Example 1" value={noIcon} />

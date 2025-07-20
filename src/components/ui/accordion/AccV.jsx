@@ -1,6 +1,7 @@
 import Accordion from "./Accordion";
 import Card from "../card/Cards";
 import Breadcrumb from "../breadcrumb/Breadcrumb";
+import { faHome } from "@fortawesome/free-solid-svg-icons";
 
 const AccV = () => {
   const items = [
@@ -16,13 +17,13 @@ const AccV = () => {
   ];
 
   const breadcrumb = [
-    { label: "Home", url: "/" },
+    { label: "Home", url: "/", icon: faHome },
     { label: "Component", url: "#" },
     { label: "Accordion", url: "#" },
   ];
 
   return (
-    <div className="m-4 flex flex-col gap-4">
+    <div className="m-6 flex flex-col gap-4">
       <Breadcrumb items={breadcrumb} />
       <div className="bg-white rounded-lg shadow-lg">
         <Card title={"Accordion"}>

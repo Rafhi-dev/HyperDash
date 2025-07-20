@@ -20,7 +20,7 @@ const Accordion = ({ items = [] }) => {
             <span className="font-semibold ">{item.title}</span>
             <span className="ml-2">
               <FontAwesomeIcon
-                className={`text-blue-700 transform transition-transform duration-300 ${
+                className={`text-gray-700 transform transition-transform duration-300 ${
                   openIndex === idx ? `rotate-180` : ``
                 }`}
                 icon={faChevronDown}

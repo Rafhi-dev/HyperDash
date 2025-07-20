@@ -1,5 +1,6 @@
-import { faUserAstronaut } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faUserAstronaut } from "@fortawesome/free-solid-svg-icons";
 import Tabs from "./Tabs";
+import Breadcrumb from "../breadcrumb/Breadcrumb";
 
 function Tabv() {
   const content = [
@@ -129,9 +130,15 @@ function Tabv() {
     },
   ];
 
+  const setBreadcrumb = [
+    { label: "Home", url: "/", icon: faHome },
+    { label: "Component" },
+    { label: "Tabs" },
+  ];
   return (
     <>
-      <div className="m-6">
+      <div className="m-6 space-y-4">
+        <Breadcrumb items={setBreadcrumb} />
         <div className="flex flex-col gap-6">
           <div className="flex-1 bg-white border border-gray-300 rounded-lg shadow-md p-4">
             <div className="text-xl font-bold mb-2">Sample Tabs</div>
