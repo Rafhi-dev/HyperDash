@@ -1,11 +1,20 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Btn from "../button/ButtonX";
 import Card from "./Cards";
-import { faLink } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faLink } from "@fortawesome/free-solid-svg-icons";
+import Breadcrumb from "../breadcrumb/Breadcrumb";
 
 const CardView = () => {
+  const breadcrumb = [
+    { label: "Home", url: "/", icon: faHome },
+    { label: "Component", url: "#" },
+    { label: "Cards" },
+  ];
   return (
     <>
+      <div className="m-6">
+        <Breadcrumb items={breadcrumb} />
+      </div>
       <div className=" bg-white rounded-lg shadow-xl border border-gray-300 p-6 m-6 z-10">
         <div className="mb-6 text-xl font-bold">Card with image</div>
         <div className="grid grid-cols md:grid-cols-3 justify-items-center gap-4">

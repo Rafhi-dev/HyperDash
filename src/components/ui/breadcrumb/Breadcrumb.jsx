@@ -1,9 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
-const Breadcrumb = ({ items }) => {
+const Breadcrumb = ({ items, className }) => {
   return (
-    <nav className="text-gray-600 text-sm mb-2" aria-label="Breadcrumb">
+    <nav
+      className={`text-gray-600 text-sm ${className}`}
+      aria-label="Breadcrumb"
+    >
       <ul className="list-none p-0 inline-flex">
         {items.map((item, index) => (
           <li key={index} className="flex items-center">

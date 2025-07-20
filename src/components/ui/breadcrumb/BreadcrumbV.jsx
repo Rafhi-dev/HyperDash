@@ -1,7 +1,5 @@
-import { Home } from "lucide-react";
 import Breadcrumb from "./Breadcrumb";
-import { icon } from "@fortawesome/fontawesome-svg-core";
-import { faBreadSlice, faHome } from "@fortawesome/free-solid-svg-icons";
+import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { faUikit, faUnity } from "@fortawesome/free-brands-svg-icons";
 
 const BreadcrumbV = () => {
