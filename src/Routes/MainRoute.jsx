@@ -8,6 +8,7 @@ import { chartRoutes } from "./chartUi.route";
 import { compUi } from "./compUi.route";
 import TableView from "../components/table/TableView";
 import ModalsV from "../components/ui/modals/ModalsV";
+import BlankPage from "../pages/Blank";
 
 const MainRoute = () => {
   return (
@@ -15,6 +16,7 @@ const MainRoute = () => {
       <Route path="/login" element={<LoginForm />} />
 
       <Route path="/" element={<MainLayout />}>
+        <Route path="blank" element={<BlankPage />} />
         {layoutRoutes.map((route, index) => (
           <Route key={index} path={route.path} element={route.element} />
         ))}
