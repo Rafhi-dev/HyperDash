@@ -17,13 +17,18 @@ const MainRoute = () => {
 
       <Route path="/" element={<MainLayout />}>
         <Route path="blank" element={<BlankPage />} />
+
+        {/* Route layout*/}
         {layoutRoutes.map((route, index) => (
           <Route key={index} path={route.path} element={route.element} />
         ))}
+
+        {/* Route Chart*/}
         {chartRoutes.map((route, index) => (
           <Route key={index} path={route.path} element={route.element} />
         ))}
 
+        {/* Route Component*/}
         {compUi.map((route, index) => (
           <Route key={index} path={route.path} element={route.element} />
         ))}
