@@ -17,7 +17,7 @@ const Breadcrumb = ({ items, className }) => {
               </div>
             )}
             {index === items.length - 1 ? (
-              <div className="text-gray-500 font-medium ">
+              <div className="text-gray-500 font-medium">
                 {item.icon && (
                   <FontAwesomeIcon icon={item.icon} className="text-sm mr-1" />
                 )}
